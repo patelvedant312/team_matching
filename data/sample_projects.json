@@ -1,0 +1,79 @@
+[
+  {
+      "id": 1,
+      "name": "AI-Powered Chatbot",
+      "required_skills": [
+          {"name": "Machine Learning", "level": "expert"},
+          {"name": "Python", "level": "intermediate"}
+      ],
+      "num_of_people_required": {
+          "backend_developers": 2,
+          "data_scientists": 1
+      },
+      "timeline": "3 months",
+      "technology": "Python, TensorFlow",
+      "domain": "Healthcare"
+  },
+  {
+      "id": 2,
+      "name": "E-Commerce Website",
+      "required_skills": [
+          {"name": "React", "level": "expert"},
+          {"name": "Node.js", "level": "intermediate"},
+          {"name": "SQL", "level": "intermediate"}
+      ],
+      "num_of_people_required": {
+          "frontend_developers": 2,
+          "backend_developers": 1,
+          "qa_engineers": 1
+      },
+      "timeline": "6 months",
+      "technology": "JavaScript, Node.js, MySQL",
+      "domain": "E-commerce"
+  },
+  {
+      "id": 3,
+      "name": "Mobile Banking App",
+      "required_skills": [
+          {"name": "Java", "level": "intermediate"},
+          {"name": "Android Development", "level": "expert"}
+      ],
+      "num_of_people_required": {
+          "android_developers": 2,
+          "qa_engineers": 1
+      },
+      "timeline": "4 months",
+      "technology": "Java, Android SDK",
+      "domain": "Finance"
+  },
+  {
+      "id": 4,
+      "name": "Healthcare Analytics Tool",
+      "required_skills": [
+          {"name": "Python", "level": "expert"},
+          {"name": "Data Analysis", "level": "intermediate"}
+      ],
+      "num_of_people_required": {
+          "data_analysts": 1,
+          "backend_developers": 1
+      },
+      "timeline": "5 months",
+      "technology": "Python, Pandas",
+      "domain": "Healthcare"
+  },
+  {
+      "id": 5,
+      "name": "IoT Home Automation",
+      "required_skills": [
+          {"name": "Arduino", "level": "intermediate"},
+          {"name": "IoT", "level": "expert"}
+      ],
+      "num_of_people_required": {
+          "iot_engineers": 1,
+          "software_developers": 1
+      },
+      "timeline": "4 months",
+      "technology": "Arduino, MQTT",
+      "domain": "Tech"
+  }
+]

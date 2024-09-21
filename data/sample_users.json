@@ -1,0 +1,194 @@
+[
+  {
+      "id": 1,
+      "name": "Raj",
+      "skills": [
+          {"name": "C++", "level": "intermediate"},
+          {"name": "Python", "level": "expert"}
+      ],
+      "rate": 40,
+      "past_job_title": {"2019": "Junior Developer"},
+      "current_job_title": "Software Engineer",
+      "past_work_domain": "Finance",
+      "years_of_exp": {
+          "Junior Developer": 1,
+          "Software Engineer": 2
+      }
+  },
+  {
+      "id": 2,
+      "name": "Aditya",
+      "skills": [
+          {"name": "Machine Learning", "level": "expert"},
+          {"name": "Python", "level": "beginner"}
+      ],
+      "rate": 50,
+      "past_job_title": {"2018": "Data Analyst"},
+      "current_job_title": "Data Scientist",
+      "past_work_domain": "Healthcare",
+      "years_of_exp": {
+          "Data Analyst": 2,
+          "Data Scientist": 3
+      }
+  },
+  {
+      "id": 3,
+      "name": "Kiran",
+      "skills": [
+          {"name": "DevOps", "level": "expert"},
+          {"name": "AWS", "level": "intermediate"}
+      ],
+      "rate": 60,
+      "past_job_title": {"2017": "System Admin"},
+      "current_job_title": "DevOps Engineer",
+      "past_work_domain": "Tech",
+      "years_of_exp": {
+          "System Admin": 1,
+          "DevOps Engineer": 3
+      }
+  },
+  {
+      "id": 4,
+      "name": "Aman",
+      "skills": [
+          {"name": "Java", "level": "expert"},
+          {"name": "Spring Boot", "level": "intermediate"}
+      ],
+      "rate": 45,
+      "past_job_title": {"2019": "Software Engineer"},
+      "current_job_title": "Backend Developer",
+      "past_work_domain": "E-commerce",
+      "years_of_exp": {
+          "Software Engineer": 1,
+          "Backend Developer": 3
+      }
+  },
+  {
+      "id": 5,
+      "name": "Sara",
+      "skills": [
+          {"name": "React", "level": "expert"},
+          {"name": "Node.js", "level": "intermediate"}
+      ],
+      "rate": 55,
+      "past_job_title": {"2018": "Frontend Developer"},
+      "current_job_title": "Full Stack Developer",
+      "past_work_domain": "Retail",
+      "years_of_exp": {
+          "Frontend Developer": 2,
+          "Full Stack Developer": 3
+      }
+  },
+  {
+      "id": 6,
+      "name": "Neha",
+      "skills": [
+          {"name": "QA Testing", "level": "expert"},
+          {"name": "Automation Testing", "level": "intermediate"}
+      ],
+      "rate": 35,
+      "past_job_title": {"2017": "QA Analyst"},
+      "current_job_title": "QA Engineer",
+      "past_work_domain": "Banking",
+      "years_of_exp": {
+          "QA Analyst": 1,
+          "QA Engineer": 3
+      }
+  },
+  {
+      "id": 7,
+      "name": "John",
+      "skills": [
+          {"name": "Kubernetes", "level": "expert"},
+          {"name": "Docker", "level": "expert"}
+      ],
+      "rate": 70,
+      "past_job_title": {"2015": "Cloud Engineer"},
+      "current_job_title": "Site Reliability Engineer",
+      "past_work_domain": "Tech",
+      "years_of_exp": {
+          "Cloud Engineer": 2,
+          "Site Reliability Engineer": 4
+      }
+  },
+  {
+      "id": 8,
+      "name": "Priya",
+      "skills": [
+          {"name": "SQL", "level": "expert"},
+          {"name": "Data Warehousing", "level": "intermediate"}
+      ],
+      "rate": 40,
+      "past_job_title": {"2018": "Data Analyst"},
+      "current_job_title": "Database Administrator",
+      "past_work_domain": "Healthcare",
+      "years_of_exp": {
+          "Data Analyst": 1,
+          "Database Administrator": 2
+      }
+  },
+  {
+      "id": 9,
+      "name": "Mark",
+      "skills": [
+          {"name": "JavaScript", "level": "intermediate"},
+          {"name": "Angular", "level": "beginner"}
+      ],
+      "rate": 35,
+      "past_job_title": {"2019": "Frontend Developer"},
+      "current_job_title": "Software Engineer",
+      "past_work_domain": "Finance",
+      "years_of_exp": {
+          "Frontend Developer": 1,
+          "Software Engineer": 1
+      }
+  },
+  {
+      "id": 10,
+      "name": "Samantha",
+      "skills": [
+          {"name": "Python", "level": "expert"},
+          {"name": "Machine Learning", "level": "intermediate"}
+      ],
+      "rate": 50,
+      "past_job_title": {"2016": "Data Analyst"},
+      "current_job_title": "AI Engineer",
+      "past_work_domain": "Tech",
+      "years_of_exp": {
+          "Data Analyst": 1,
+          "AI Engineer": 4
+      }
+  },
+  {
+      "id": 11,
+      "name": "Nina",
+      "skills": [
+          {"name": "QA Testing", "level": "intermediate"},
+          {"name": "Manual Testing", "level": "expert"}
+      ],
+      "rate": 30,
+      "past_job_title": {"2019": "QA Engineer"},
+      "current_job_title": "QA Lead",
+      "past_work_domain": "Retail",
+      "years_of_exp": {
+          "QA Engineer": 2,
+          "QA Lead": 2
+      }
+  },
+  {
+      "id": 12,
+      "name": "Michael",
+      "skills": [
+          {"name": "C#", "level": "expert"},
+          {"name": ".NET", "level": "intermediate"}
+      ],
+      "rate": 45,
+      "past_job_title": {"2018": "Software Engineer"},
+      "current_job_title": "Senior Developer",
+      "past_work_domain": "E-commerce",
+      "years_of_exp": {
+          "Software Engineer": 2,
+          "Senior Developer": 3
+      }
+  }
+]
