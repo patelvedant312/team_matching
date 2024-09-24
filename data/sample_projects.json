@@ -1,79 +1,245 @@
 [
-  {
-      "id": 1,
-      "name": "AI-Powered Chatbot",
-      "required_skills": [
-          {"name": "Machine Learning", "level": "expert"},
-          {"name": "Python", "level": "intermediate"}
-      ],
-      "num_of_people_required": {
-          "backend_developers": 2,
-          "data_scientists": 1
-      },
-      "timeline": "3 months",
-      "technology": "Python, TensorFlow",
-      "domain": "Healthcare"
-  },
-  {
-      "id": 2,
-      "name": "E-Commerce Website",
-      "required_skills": [
-          {"name": "React", "level": "expert"},
-          {"name": "Node.js", "level": "intermediate"},
-          {"name": "SQL", "level": "intermediate"}
-      ],
-      "num_of_people_required": {
-          "frontend_developers": 2,
-          "backend_developers": 1,
-          "qa_engineers": 1
-      },
-      "timeline": "6 months",
-      "technology": "JavaScript, Node.js, MySQL",
-      "domain": "E-commerce"
-  },
-  {
-      "id": 3,
-      "name": "Mobile Banking App",
-      "required_skills": [
-          {"name": "Java", "level": "intermediate"},
-          {"name": "Android Development", "level": "expert"}
-      ],
-      "num_of_people_required": {
-          "android_developers": 2,
-          "qa_engineers": 1
-      },
-      "timeline": "4 months",
-      "technology": "Java, Android SDK",
-      "domain": "Finance"
-  },
-  {
-      "id": 4,
-      "name": "Healthcare Analytics Tool",
-      "required_skills": [
-          {"name": "Python", "level": "expert"},
-          {"name": "Data Analysis", "level": "intermediate"}
-      ],
-      "num_of_people_required": {
-          "data_analysts": 1,
-          "backend_developers": 1
-      },
-      "timeline": "5 months",
-      "technology": "Python, Pandas",
-      "domain": "Healthcare"
-  },
-  {
-      "id": 5,
-      "name": "IoT Home Automation",
-      "required_skills": [
-          {"name": "Arduino", "level": "intermediate"},
-          {"name": "IoT", "level": "expert"}
-      ],
-      "num_of_people_required": {
-          "iot_engineers": 1,
-          "software_developers": 1
-      },
-      "timeline": "4 months",
-      "technology": "Arduino, MQTT",
-      "domain": "Tech"
-  }
+    {
+        "id": 1,
+        "name": "3D Game Development",
+        "required_skills": [
+            {"name": "Game Development", "level": "expert"},
+            {"name": "Unity", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "game_developers": 2,
+            "3d_designers": 1
+        },
+        "number_of_days": 180,
+        "project_start_date": "2023-11-01",
+        "technology": "Unity, C#",
+        "domain": "Gaming"
+    },
+    {
+        "id": 2,
+        "name": "Healthcare Data Analysis",
+        "required_skills": [
+            {"name": "Python", "level": "expert"},
+            {"name": "Machine Learning", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "data_scientists": 3,
+            "data_engineers": 1
+        },
+        "number_of_days": 120,
+        "project_start_date": "2023-12-01",
+        "technology": "Python, Pandas",
+        "domain": "Healthcare"
+    },
+    {
+        "id": 3,
+        "name": "E-commerce Web App",
+        "required_skills": [
+            {"name": "JavaScript", "level": "expert"},
+            {"name": "React", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "frontend_developers": 2,
+            "backend_developers": 2
+        },
+        "number_of_days": 150,
+        "project_start_date": "2023-11-15",
+        "technology": "JavaScript, React, Node.js",
+        "domain": "E-commerce"
+    },
+    {
+        "id": 4,
+        "name": "Financial Forecasting System",
+        "required_skills": [
+            {"name": "Data Science", "level": "expert"},
+            {"name": "R", "level": "intermediate"},
+            {"name": "Python", "level": "expert"}
+        ],
+        "num_of_people_required": {
+            "data_scientists": 2,
+            "financial_analysts": 2
+        },
+        "number_of_days": 180,
+        "project_start_date": "2024-01-05",
+        "technology": "Python, R, SQL",
+        "domain": "Finance"
+    },
+    {
+        "id": 5,
+        "name": "Real-Time Chat Application",
+        "required_skills": [
+            {"name": "JavaScript", "level": "expert"},
+            {"name": "WebSockets", "level": "intermediate"},
+            {"name": "Node.js", "level": "expert"}
+        ],
+        "num_of_people_required": {
+            "frontend_developers": 2,
+            "backend_developers": 1
+        },
+        "number_of_days": 90,
+        "project_start_date": "2023-11-20",
+        "technology": "JavaScript, Node.js, WebSockets",
+        "domain": "Communication"
+    },
+    {
+        "id": 6,
+        "name": "AI-Based Content Recommendation",
+        "required_skills": [
+            {"name": "Machine Learning", "level": "expert"},
+            {"name": "Python", "level": "expert"},
+            {"name": "NLP", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "data_scientists": 3,
+            "machine_learning_engineers": 2
+        },
+        "number_of_days": 150,
+        "project_start_date": "2023-12-10",
+        "technology": "Python, TensorFlow, NLP",
+        "domain": "Media"
+    },
+    {
+        "id": 7,
+        "name": "Blockchain Voting System",
+        "required_skills": [
+            {"name": "Blockchain", "level": "expert"},
+            {"name": "Cryptography", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "blockchain_developers": 2,
+            "security_experts": 1
+        },
+        "number_of_days": 210,
+        "project_start_date": "2023-12-15",
+        "technology": "Ethereum, Solidity, Cryptography",
+        "domain": "Governance"
+    },
+    {
+        "id": 8,
+        "name": "Autonomous Drone Software",
+        "required_skills": [
+            {"name": "C++", "level": "expert"},
+            {"name": "Robotics", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "software_engineers": 2,
+            "robotics_engineers": 2
+        },
+        "number_of_days": 240,
+        "project_start_date": "2024-01-20",
+        "technology": "C++, ROS, DroneKit",
+        "domain": "Aerospace"
+    },
+    {
+        "id": 9,
+        "name": "Cloud-Based Inventory Management",
+        "required_skills": [
+            {"name": "AWS", "level": "expert"},
+            {"name": "Python", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "cloud_engineers": 2,
+            "devops_engineers": 1
+        },
+        "number_of_days": 120,
+        "project_start_date": "2023-12-05",
+        "technology": "AWS, Python, Docker",
+        "domain": "Retail"
+    },
+    {
+        "id": 10,
+        "name": "IoT Smart Home System",
+        "required_skills": [
+            {"name": "IoT", "level": "expert"},
+            {"name": "Embedded Systems", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "iot_engineers": 3,
+            "embedded_systems_engineers": 1
+        },
+        "number_of_days": 180,
+        "project_start_date": "2024-02-01",
+        "technology": "Arduino, Raspberry Pi, MQTT",
+        "domain": "Home Automation"
+    },
+    {
+        "id": 11,
+        "name": "AI-Powered Virtual Assistant",
+        "required_skills": [
+            {"name": "NLP", "level": "expert"},
+            {"name": "Python", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "nlp_experts": 2,
+            "software_engineers": 2
+        },
+        "number_of_days": 150,
+        "project_start_date": "2023-11-25",
+        "technology": "Python, TensorFlow, NLP",
+        "domain": "AI Assistants"
+    },
+    {
+        "id": 12,
+        "name": "Online Education Platform",
+        "required_skills": [
+            {"name": "JavaScript", "level": "expert"},
+            {"name": "React", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "frontend_developers": 2,
+            "backend_developers": 2
+        },
+        "number_of_days": 150,
+        "project_start_date": "2023-12-05",
+        "technology": "JavaScript, React, Node.js",
+        "domain": "Education"
+    },
+    {
+        "id": 13,
+        "name": "Cybersecurity Threat Detection",
+        "required_skills": [
+            {"name": "Cybersecurity", "level": "expert"},
+            {"name": "Python", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "security_experts": 3,
+            "software_engineers": 2
+        },
+        "number_of_days": 180,
+        "project_start_date": "2024-01-10",
+        "technology": "Python, SIEM, Firewalls",
+        "domain": "Security"
+    },
+    {
+        "id": 14,
+        "name": "Autonomous Vehicle Navigation",
+        "required_skills": [
+            {"name": "C++", "level": "expert"},
+            {"name": "Computer Vision", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "software_engineers": 2,
+            "computer_vision_engineers": 2
+        },
+        "number_of_days": 240,
+        "project_start_date": "2024-02-15",
+        "technology": "C++, OpenCV, ROS",
+        "domain": "Automotive"
+    },
+    {
+        "id": 15,
+        "name": "Social Media Analytics Platform",
+        "required_skills": [
+            {"name": "Python", "level": "expert"},
+            {"name": "Data Science", "level": "intermediate"}
+        ],
+        "num_of_people_required": {
+            "data_scientists": 3,
+            "backend_developers": 1
+        },
+        "number_of_days": 150,
+        "project_start_date": "2023-11-30",
+        "technology": "Python, Pandas, SQL",
+        "domain": "Marketing"
+    }
 ]
