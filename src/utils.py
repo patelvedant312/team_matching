@@ -1,12 +1,18 @@
 # src/utils.py
 
 def level_to_numeric(level):
-    level_mapping = {
+    """
+    Converts skill level from string to numeric value for comparison.
+
+    Args:
+        level (str): Skill level as a string ('beginner', 'intermediate', 'expert').
+
+    Returns:
+        int: Numeric representation of the skill level.
+    """
+    levels = {
         'beginner': 1,
         'intermediate': 2,
         'expert': 3
     }
-    return level_mapping.get(level.lower(), 0)
-
-def match_skill_level(user_level, required_level):
-    return level_to_numeric(user_level) >= level_to_numeric(required_level)
+    return levels.get(level.lower(), 0)  # Returns 0 if level is unrecognized
