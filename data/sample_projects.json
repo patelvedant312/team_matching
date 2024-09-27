@@ -1,347 +1,108 @@
 [
     {
-        "ProjectID": 1,
-        "ProjectName": "3D Game Development",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Game Developer",
-                "Level": "Expert",
-                "Skills": ["Game Development", "Unity"],
-                "Quantity": 2
-            },
-            {
-                "Role": "3D Designer",
-                "Level": "Intermediate",
-                "Skills": ["3D Modeling"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 180,
-        "project_start_date": "2023-11-01",
-        "technology": "Unity, C#",
-        "domain": "Gaming"
+      "ProjectID": 1,
+      "ProjectName": "3D Game Development",
+      "OrgID": 1,
+      "RequiredResources": [
+        {
+          "Role": "Game Developer",
+          "Skills": ["Game Development: expert", "Unity: intermediate"],
+          "Quantity": 2
+        },
+        {
+          "Role": "3D Designer",
+          "Skills": ["3D Modeling: intermediate"],
+          "Quantity": 1
+        }
+      ],
+      "NumberOfDays": 180,
+      "ProjectStartDate": "2023-11-01",
+      "Technology": "Unity, C#",
+      "Domain": "Gaming"
     },
     {
-        "ProjectID": 2,
-        "ProjectName": "Healthcare Data Analysis",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Data Scientist",
-                "Level": "Expert",
-                "Skills": ["Python", "Machine Learning"],
-                "Quantity": 3
-            },
-            {
-                "Role": "Data Engineer",
-                "Level": "Intermediate",
-                "Skills": ["ETL", "Data Engineering"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 120,
-        "project_start_date": "2023-12-01",
-        "technology": "Python, Pandas",
-        "domain": "Healthcare"
+      "ProjectID": 2,
+      "ProjectName": "Healthcare Data Analysis",
+      "OrgID": 2,
+      "RequiredResources": [
+        {
+          "Role": "Data Scientist",
+          "Skills": ["Python: expert", "Machine Learning: intermediate"],
+          "Quantity": 3
+        },
+        {
+          "Role": "Data Engineer",
+          "Skills": ["ETL: intermediate", "Data Engineering: intermediate"],
+          "Quantity": 2
+        }
+      ],
+      "NumberOfDays": 120,
+      "ProjectStartDate": "2023-12-01",
+      "Technology": "Python, Pandas",
+      "Domain": "Healthcare"
     },
     {
-        "ProjectID": 3,
-        "ProjectName": "E-commerce Web App",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Frontend Developer",
-                "Level": "Expert",
-                "Skills": ["JavaScript", "React"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Backend Developer",
-                "Level": "Intermediate",
-                "Skills": ["Node.js", "SQL"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 150,
-        "project_start_date": "2023-11-15",
-        "technology": "JavaScript, React, Node.js",
-        "domain": "E-commerce"
+      "ProjectID": 3,
+      "ProjectName": "E-commerce Web App",
+      "OrgID": 1,
+      "RequiredResources": [
+        {
+          "Role": "Frontend Developer",
+          "Skills": ["JavaScript: expert", "React: intermediate"],
+          "Quantity": 2
+        },
+        {
+          "Role": "Backend Developer",
+          "Skills": ["Node.js: expert", "SQL: intermediate"],
+          "Quantity": 1
+        }
+      ],
+      "NumberOfDays": 150,
+      "ProjectStartDate": "2023-11-15",
+      "Technology": "React, Node.js",
+      "Domain": "E-commerce"
     },
     {
-        "ProjectID": 4,
-        "ProjectName": "Financial Forecasting System",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Data Scientist",
-                "Level": "Expert",
-                "Skills": ["Python", "Data Science"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Financial Analyst",
-                "Level": "Intermediate",
-                "Skills": ["Financial Modeling", "Data Analysis"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 180,
-        "project_start_date": "2024-01-05",
-        "technology": "Python, R, SQL",
-        "domain": "Finance"
+      "ProjectID": 4,
+      "ProjectName": "Financial Forecasting System",
+      "OrgID": 2,
+      "RequiredResources": [
+        {
+          "Role": "Data Scientist",
+          "Skills": ["Python: expert", "Data Science: intermediate"],
+          "Quantity": 2
+        },
+        {
+          "Role": "Financial Analyst",
+          "Skills": ["Financial Modeling: expert", "Data Analysis: intermediate"],
+          "Quantity": 1
+        }
+      ],
+      "NumberOfDays": 180,
+      "ProjectStartDate": "2024-01-05",
+      "Technology": "Python, R, SQL",
+      "Domain": "Finance"
     },
     {
-        "ProjectID": 5,
-        "ProjectName": "Real-Time Chat Application",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Frontend Developer",
-                "Level": "Expert",
-                "Skills": ["JavaScript", "React"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Backend Developer",
-                "Level": "Intermediate",
-                "Skills": ["Node.js", "WebSockets"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 90,
-        "project_start_date": "2023-11-20",
-        "technology": "JavaScript, Node.js, WebSockets",
-        "domain": "Communication"
-    },
-    {
-        "ProjectID": 6,
-        "ProjectName": "AI-Based Content Recommendation",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Data Scientist",
-                "Level": "Expert",
-                "Skills": ["Machine Learning", "NLP"],
-                "Quantity": 3
-            },
-            {
-                "Role": "Machine Learning Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Python", "TensorFlow"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 150,
-        "project_start_date": "2023-12-10",
-        "technology": "Python, TensorFlow, NLP",
-        "domain": "Media"
-    },
-    {
-        "ProjectID": 7,
-        "ProjectName": "Blockchain Voting System",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Blockchain Developer",
-                "Level": "Expert",
-                "Skills": ["Blockchain", "Ethereum"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Security Expert",
-                "Level": "Intermediate",
-                "Skills": ["Cryptography", "Smart Contracts"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 210,
-        "project_start_date": "2023-12-15",
-        "technology": "Ethereum, Solidity, Cryptography",
-        "domain": "Governance"
-    },
-    {
-        "ProjectID": 8,
-        "ProjectName": "Autonomous Drone Software",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Software Engineer",
-                "Level": "Expert",
-                "Skills": ["C++", "Drone Software"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Robotics Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Robotics", "ROS"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 240,
-        "project_start_date": "2024-01-20",
-        "technology": "C++, ROS, DroneKit",
-        "domain": "Aerospace"
-    },
-    {
-        "ProjectID": 9,
-        "ProjectName": "Cloud-Based Inventory Management",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Cloud Engineer",
-                "Level": "Expert",
-                "Skills": ["AWS", "Cloud Computing"],
-                "Quantity": 2
-            },
-            {
-                "Role": "DevOps Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Docker", "CI/CD"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 120,
-        "project_start_date": "2023-12-05",
-        "technology": "AWS, Python, Docker",
-        "domain": "Retail"
-    },
-    {
-        "ProjectID": 10,
-        "ProjectName": "IoT Smart Home System",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "IoT Engineer",
-                "Level": "Expert",
-                "Skills": ["IoT", "Embedded Systems"],
-                "Quantity": 3
-            },
-            {
-                "Role": "Embedded Systems Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Arduino", "Raspberry Pi"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 180,
-        "project_start_date": "2024-02-01",
-        "technology": "Arduino, Raspberry Pi, MQTT",
-        "domain": "Home Automation"
-    },
-    {
-        "ProjectID": 11,
-        "ProjectName": "AI-Powered Virtual Assistant",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "NLP Expert",
-                "Level": "Expert",
-                "Skills": ["NLP", "AI Assistants"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Software Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Python", "TensorFlow"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 150,
-        "project_start_date": "2023-11-25",
-        "technology": "Python, TensorFlow, NLP",
-        "domain": "AI Assistants"
-    },
-    {
-        "ProjectID": 12,
-        "ProjectName": "Online Education Platform",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Frontend Developer",
-                "Level": "Expert",
-                "Skills": ["JavaScript", "React"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Backend Developer",
-                "Level": "Intermediate",
-                "Skills": ["Node.js", "SQL"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 150,
-        "project_start_date": "2023-12-05",
-        "technology": "JavaScript, React, Node.js",
-        "domain": "Education"
-    },
-    {
-        "ProjectID": 13,
-        "ProjectName": "Cybersecurity Threat Detection",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Security Expert",
-                "Level": "Expert",
-                "Skills": ["Cybersecurity", "Threat Detection"],
-                "Quantity": 3
-            },
-            {
-                "Role": "Software Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Python", "SIEM"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 180,
-        "project_start_date": "2024-01-10",
-        "technology": "Python, SIEM, Firewalls",
-        "domain": "Security"
-    },
-    {
-        "ProjectID": 14,
-        "ProjectName": "Autonomous Vehicle Navigation",
-        "OrgID": 2,
-        "required_resources": [
-            {
-                "Role": "Software Engineer",
-                "Level": "Expert",
-                "Skills": ["C++", "ROS"],
-                "Quantity": 2
-            },
-            {
-                "Role": "Computer Vision Engineer",
-                "Level": "Intermediate",
-                "Skills": ["Computer Vision", "OpenCV"],
-                "Quantity": 2
-            }
-        ],
-        "number_of_days": 240,
-        "project_start_date": "2024-02-15",
-        "technology": "C++, OpenCV, ROS",
-        "domain": "Automotive"
-    },
-    {
-        "ProjectID": 15,
-        "ProjectName": "Social Media Analytics Platform",
-        "OrgID": 1,
-        "required_resources": [
-            {
-                "Role": "Data Scientist",
-                "Level": "Expert",
-                "Skills": ["Python", "Social Media Analytics"],
-                "Quantity": 3
-            },
-            {
-                "Role": "Backend Developer",
-                "Level": "Intermediate",
-                "Skills": ["SQL", "Data Analysis"],
-                "Quantity": 1
-            }
-        ],
-        "number_of_days": 150,
-        "project_start_date": "2023-11-30",
-        "technology": "Python, Pandas, SQL",
-        "domain": "Marketing"
+      "ProjectID": 5,
+      "ProjectName": "Real-Time Chat Application",
+      "OrgID": 1,
+      "RequiredResources": [
+        {
+          "Role": "Frontend Developer",
+          "Skills": ["JavaScript: expert", "React: intermediate"],
+          "Quantity": 2
+        },
+        {
+          "Role": "Backend Developer",
+          "Skills": ["Node.js: expert", "WebSockets: intermediate"],
+          "Quantity": 1
+        }
+      ],
+      "NumberOfDays": 90,
+      "ProjectStartDate": "2023-11-20",
+      "Technology": "Node.js, WebSockets",
+      "Domain": "Communication"
     }
-]
+  ]
+  
