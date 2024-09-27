@@ -1,7 +1,7 @@
 # src/test_algorithm.py
 
 from src import create_app, db
-from src.team_formation import match_users_to_projects
+from src.team_formation import match_resources_to_projects
 
 def main():
     # Create the Flask application
@@ -10,14 +10,14 @@ def main():
     # Use the Flask application context to interact with the database
     with app.app_context():
         try:
-            project_assignments, unfilled_roles = match_users_to_projects()
+            project_assignments, unfilled_roles = match_resources_to_projects()
             
             # Print Project Assignments
             print("Project Assignments:")
             for project, assignments in project_assignments.items():
                 print(f"\nProject: {project}")
-                for assignment in assignments:
-                    print(f" - Employee: {assignment['Employee']}")
+                for employee in assignments:
+                    print(f" - Employee: {employee}")
             
             # Print Unfilled Roles
             if unfilled_roles:

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-#main config.py file
-=======
 # src/config.py
 
 import os
@@ -10,8 +7,7 @@ load_dotenv()  # This loads environment variables from .env file into the enviro
 
 class Config:
     """Configuration class to encapsulate all configuration variables."""
-    DATABASE_URL = os.getenv('postgresql://team_matching_owner:Zf3AKJrwqnc1@ep-purple-unit-a54far0t.us-east-2.aws.neon.tech/team_matching?sslmode=require')
-    SECRET_KEY = os.getenv('4bad2517464bafe5ab39973ece1d50381a9da2ee81ff9b62dd0d57a78394e07b')
+    DATABASE_URL = os.getenv('DATABASE_URL')  # Default to SQLite if not set
+    SECRET_KEY = os.getenv('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = DATABASE_URL  # SQLAlchemy configuration
     SQLALCHEMY_TRACK_MODIFICATIONS = False  # Disable signal handling
->>>>>>> 2d32740bcce1c31e6a5556a54cef27ba6bb34806

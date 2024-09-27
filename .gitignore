@@ -1,2 +1,11 @@
 venv/
 env/
+.env
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Specific to the src directory
+src\__pycache__\
+
