@@ -1,4 +1,6 @@
-psycopg2-binary
-SQLAlchemy
+Flask
+Flask-Migrate
+Flask-SQLAlchemy
 python-dotenv
-networkx
+munkres
+Faker

@@ -1,8 +1,8 @@
 # src/routes.py
 
 from flask import Blueprint, render_template, request, redirect, url_for
-from .models import Employee, Project, Team, Organization, Skill, employee_skill_association
-from .team_formation import match_users_to_projects
+from .models import Resource, Project, Team, Organization
+#from .team_formation import match_resources_to_projects
 from . import db
 import json
 from datetime import datetime
@@ -30,29 +30,17 @@ def add_user():
             db.session.add(org)
             db.session.commit()
 
-        # Create new employee
-        new_employee = Employee(
+        # Create new resource
+        new_resource = Resource(
             Name=name,
             Rate=rate,
-            AvailableDate=datetime.strptime(available_date, '%Y-%m-%d'),
+            Skills=skills,
+            PastJobTitles=request.form.get('past_job_titles', []),
+            Domain=request.form.get('domain', []),
+            AvailableDate=datetime.strptime(available_date, '%Y-%m-%d') if available_date else None,
             OrgID=org.OrgID
         )
-        db.session.add(new_employee)
-        db.session.flush()  # Flush to get EmployeeID
-
-        # Add skills to association table
-        for skill_info in skills:
-            skill = Skill.query.filter_by(SkillName=skill_info['name']).first()
-            if not skill:
-                skill = Skill(SkillName=skill_info['name'])
-                db.session.add(skill)
-                db.session.flush()
-            db.session.execute(employee_skill_association.insert().values(
-                EmployeeID=new_employee.EmployeeID,
-                SkillID=skill.SkillID,
-                Level=skill_info['level']
-            ))
-
+        db.session.add(new_resource)
         db.session.commit()
         return redirect(url_for('main.index'))
     return render_template('add_user.html')
@@ -62,7 +50,7 @@ def add_project():
     if request.method == 'POST':
         # Get form data
         project_name = request.form['project_name']
-        required_resources = json.loads(request.form['required_resources'])  # Expecting JSON list of {"Role": "...", "Level": "...", "Skills": [...], "Quantity": ...}
+        required_resources = json.loads(request.form['required_resources'])  # Expecting JSON list of {"Role": "...", "Skills": [...], "Quantity": ...}
         project_start_date = request.form['project_start_date']
         number_of_days = int(request.form['number_of_days'])
         domain = request.form['domain']
@@ -87,7 +75,7 @@ def add_project():
 @main.route('/match_teams')
 def match_teams():
     # Run the matching algorithm
-    project_assignments, unfilled_roles = match_users_to_projects()
+    project_assignments, unfilled_roles = match_resources_to_projects()
 
     # Fetch all projects and their assignments
     projects = Project.query.all()
@@ -95,7 +83,7 @@ def match_teams():
     for project in projects:
         team = Team.query.filter_by(ProjectID=project.ProjectID).first()
         if team:
-            assigned_employees = Employee.query.filter(Employee.EmployeeID.in_(team.EmployeeIDs)).all()
+            assigned_employees = Resource.query.filter(Resource.ResourceID.in_(team.ResourceIDs)).all()
         else:
             assigned_employees = []
         assignments.append({
