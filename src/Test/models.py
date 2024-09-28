@@ -1,11 +1,9 @@
 # src/models.py
 
-from flask_sqlalchemy import SQLAlchemy
+from src.Test import db
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB
 from sqlalchemy import Column, Integer, String, Numeric, Date, ForeignKey
 from sqlalchemy.orm import relationship
-
-db = SQLAlchemy()
 
 class Organization(db.Model):
     __tablename__ = 'organizations'

@@ -1,273 +1,189 @@
-import json
-import random
-from faker import Faker
-from datetime import datetime, timedelta
+# src/team_formation.py
 
-fake = Faker()
+from collections import defaultdict
+from datetime import datetime
+import logging
+from munkres import Munkres
 
-# Configuration
-NUM_RESOURCES = 65
-NUM_PROJECTS = 12
-NUM_ORGANIZATIONS = 3  # Assuming OrgID ranges from 1 to 3
+from .utils import level_to_numeric, get_resource_skills_with_levels, calculate_weight
 
-# Predefined Lists
-SKILLS = [
-    "Python",
-    "JavaScript",
-    "Java",
-    "C++",
-    "C#",
-    "React",
-    "Node.js",
-    "Django",
-    "Flask",
-    "SQL",
-    "Machine Learning",
-    "Data Analysis",
-    "AWS",
-    "DevOps",
-    "Blockchain",
-    "Unity",
-    "3D Modeling",
-    "ETL",
-    "Data Engineering",
-    "Financial Modeling",
-    "Data Science",
-    "TensorFlow",
-    "NLP",
-    "Spring Boot",
-    "Express",
-    "WebSockets",
-    "Redux",
-    "Docker",
-    "Solidity",
-    "React Native",
-    "HTML",
-    "CSS",
-    "Ruby",
-    "Rails",
-    "Go",
-    "Kubernetes",
-    "Swift",
-    "Objective-C",
-    "TypeScript",
-    "GraphQL"
-]
+from src.Test import db
+from .models import Resource, Project, Team
 
-SKILL_LEVELS = ["beginner", "intermediate", "expert"]
+from decimal import Decimal
 
-DOMAINS = [
-    "Healthcare",
-    "Finance",
-    "E-commerce",
-    "Gaming",
-    "Education",
-    "Media",
-    "AI Assistants",
-    "Cloud Computing",
-    "Blockchain",
-    "Autonomous Systems",
-    "Retail",
-    "Communication"
-]
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s:%(name)s:%(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
-ROLES = [
-    "Frontend Developer",
-    "Backend Developer",
-    "Data Scientist",
-    "Data Engineer",
-    "3D Designer",
-    "Game Developer",
-    "Financial Analyst",
-    "DevOps Engineer",
-    "Blockchain Developer",
-    "UI/UX Designer",
-    "Full Stack Developer",
-    "Machine Learning Engineer"
-]
+def is_level_sufficient(resource_level, required_level):
+    """
+    Determines if the resource's skill level meets or exceeds the required level.
+    """
+    levels = ['beginner', 'intermediate', 'expert']
+    try:
+        resource_index = levels.index(resource_level.lower())
+        required_index = levels.index(required_level.lower())
+        return resource_index >= required_index
+    except ValueError:
+        # If either level is not recognized, treat as insufficient
+        return False
 
-TECHNOLOGIES = [
-    "Python, Django",
-    "JavaScript, React",
-    "Java, Spring Boot",
-    "C++, ROS",
-    "C#, Unity",
-    "Node.js, Express",
-    "React, Node.js",
-    "Python, TensorFlow",
-    "AWS, Docker",
-    "Solidity, Blockchain",
-    "React Native, Redux",
-    "HTML, CSS"
-]
+def build_cost_matrix(projects, resources, weights):
+    """
+    Builds a cost matrix for the Hungarian algorithm.
+    Rows represent project roles, and columns represent resources.
+    """
+    cost_matrix = []
+    role_list = []
+    resource_list = []
 
-PROJECT_NAMES = [
-    "Smart Healthcare Platform",
-    "Financial Forecasting System",
-    "E-commerce Web App",
-    "3D Game Development",
-    "Real-Time Chat Application",
-    "Healthcare Data Analysis",
-    "Blockchain Governance Tool",
-    "Autonomous Drone Control",
-    "AI-Powered Media Analytics",
-    "Cloud-Based Retail Solution",
-    "Education Management System",
-    "Communication Enhancement Platform"
-]
+    for project in projects:
+        for req in project.RequiredResources:
+            role = req['Role']
+            skills = req['Skills']
+            quantity = req['Quantity']
+            for _ in range(quantity):
+                role_list.append((project, req))
 
-JOB_TITLES = [
-    "Data Scientist",
-    "Software Engineer",
-    "Frontend Developer",
-    "Backend Developer",
-    "DevOps Engineer",
-    "Blockchain Developer",
-    "Financial Analyst",
-    "3D Designer",
-    "Machine Learning Engineer",
-    "Full Stack Developer",
-    "UI/UX Designer",
-    "Data Engineer",
-    "Cloud Engineer",
-    "Robotics Engineer",
-    "AI Engineer",
-    "System Administrator",
-    "Smart Contract Developer",
-    "NLP Specialist",
-    "Data Analyst",
-    "Database Administrator"
-]
+    for resource in resources:
+        resource_list.append(resource)
 
-ORGANIZATIONS = [
-    {"OrgID": 1, "OrgName": "OrgA"},
-    {"OrgID": 2, "OrgName": "OrgB"},
-    {"OrgID": 3, "OrgName": "OrgC"}
-]
+    for role in role_list:
+        row = []
+        project, req = role
+        required_skills = req['Skills']
+        for resource in resource_list:
+            # Skip resources already assigned to a team
+            if resource.TeamID is not None:
+                cost = Decimal('1000000')  # High cost to discourage assignment
+            else:
+                resource_skills = get_resource_skills_with_levels(resource)
+                # Check if resource has all required skills with sufficient levels
+                has_all_skills = all(
+                    is_level_sufficient(
+                        resource_skills.get(skill.lower(), 'beginner'),
+                        details['level'].lower()
+                    )
+                    for skill, details in required_skills.items()
+                )
+                # Check availability
+                available = resource.AvailableDate is not None and resource.AvailableDate <= project.ProjectStartDate
+                if has_all_skills and available:
+                    # Calculate weight based on desired parameters
+                    weight = calculate_weight(resource, req, project)
+                    # Since Munkres finds minimum cost, invert the weight
+                    cost = -weight
+                else:
+                    # Assign a large positive cost to discourage assignment
+                    cost = Decimal('1000000')
+            row.append(cost)
+        cost_matrix.append(row)
 
-def generate_skills():
-    """Generates a list of skill dictionaries for a resource or project role."""
-    num_skills = random.randint(2, 5)
-    selected_skills = random.sample(SKILLS, num_skills)
-    skills_with_levels = []
-    for skill in selected_skills:
-        level = random.choice(SKILL_LEVELS)
-        skills_with_levels.append({skill: {"level": level}})
-    return skills_with_levels
+    return cost_matrix, role_list, resource_list
 
-def generate_past_jobs():
-    """Generates a list of past job dictionaries for a resource."""
-    num_jobs = random.randint(2, 4)
-    selected_jobs = random.sample(JOB_TITLES, num_jobs)
-    past_jobs = []
-    for job in selected_jobs:
-        years = round(random.uniform(1.0, 10.0), 1)
-        past_jobs.append({job: {"years": years}})
-    return past_jobs
+def find_optimal_assignment(projects, resources, weights):
+    """
+    Uses the Hungarian algorithm to find the optimal assignment.
+    """
+    cost_matrix, role_list, resource_list = build_cost_matrix(projects, resources, weights)
+    m = Munkres()
+    indexes = m.compute(cost_matrix)
+    assignments = []
+    unfilled_roles = defaultdict(int)
 
-def generate_domains():
-    """Generates a list of domains for a resource or project."""
-    num_domains = random.randint(1, 3)
-    return random.sample(DOMAINS, num_domains)
+    for row, column in indexes:
+        if cost_matrix[row][column] < Decimal('1000000'):
+            project, req = role_list[row]
+            resource = resource_list[column]
+            assignments.append((project, req, resource))
+        else:
+            project, req = role_list[row]
+            unfilled_roles[req['Role']] +=1
 
-def generate_resources(num_resources):
-    """Generates a list of resource dictionaries."""
-    resources = []
-    for i in range(1, num_resources + 1):
-        name = fake.name()
-        rate = round(random.uniform(40.0, 100.0), 2)
-        
-        # Assign skills
-        skills = generate_skills()
-        
-        # Assign past job titles
-        past_jobs = generate_past_jobs()
-        
-        # Assign domains
-        domains = generate_domains()
-        
-        # Available date within the next 90 days
-        available_date = fake.date_between(start_date='today', end_date='+90d').strftime('%Y-%m-%d')
-        
-        # Random OrgID
-        org = random.choice(ORGANIZATIONS)
-        org_id = org["OrgID"]
-        
-        resource = {
-            "ResourceID": i,
-            "Name": name,
-            "Rate": rate,
-            "Skills": skills,
-            "PastJobTitles": past_jobs,
-            "Domain": domains,
-            "AvailableDate": available_date,
-            "OrgID": org_id
+    return assignments, unfilled_roles
+
+def match_resources_to_projects():
+    """
+    Assigns resources to projects using the Hungarian algorithm.
+    """
+    project_assignments = defaultdict(list)
+    unfilled_roles_overall = defaultdict(int)
+    
+    try:
+        # Fetch all resources and projects
+        resources = Resource.query.all()
+        projects = Project.query.all()
+        logger.info(f"Fetched {len(resources)} resources and {len(projects)} projects.")
+
+        # Define weights for parameters (can be adjusted)
+        weights = {
+            'rate': Decimal('1.0'),
+            'experience': Decimal('1.0'),
+            'skill_level': Decimal('1.0')
+            # Add more parameters and weights as needed
         }
-        resources.append(resource)
-    return resources
 
-def generate_required_resources():
-    """Generates a list of required resource dictionaries for a project."""
-    num_required = random.randint(2, 4)
-    required_resources = []
-    selected_roles = random.sample(ROLES, num_required)
-    for role in selected_roles:
-        # Assign skills for the role
-        skills = generate_skills()
-        # Assign quantity
-        quantity = random.randint(1, 3)
-        required_resources.append({
-            "Role": role,
-            "Skills": skills,
-            "Quantity": quantity
-        })
-    return required_resources
+        # Find optimal assignments
+        assignments, unfilled_roles = find_optimal_assignment(projects, resources, weights)
 
-def generate_projects(num_projects):
-    """Generates a list of project dictionaries."""
-    projects = []
-    for i in range(1, num_projects + 1):
-        project_name = PROJECT_NAMES[i - 1]  # Ensure unique names
-        org = random.choice(ORGANIZATIONS)
-        org_id = org["OrgID"]
-        
-        # Assign required resources
-        required_resources = generate_required_resources()
-        
-        number_of_days = random.randint(60, 180)
-        
-        # Start date within the next 30 days
-        project_start_date = fake.date_between(start_date='today', end_date='+30d').strftime('%Y-%m-%d')
-        
-        technology = random.choice(TECHNOLOGIES)
-        domain = random.choice(DOMAINS)
-        
-        project = {
-            "ProjectID": i,
-            "ProjectName": project_name,
-            "OrgID": org_id,
-            "RequiredResources": required_resources,
-            "NumberOfDays": number_of_days,
-            "ProjectStartDate": project_start_date,
-            "Technology": technology,
-            "Domain": domain
-        }
-        projects.append(project)
-    return projects
+        # Process assignments
+        assigned_resource_ids = set()
+        for project, req, resource in assignments:
+            if resource.ResourceID not in assigned_resource_ids:
+                project_assignments[project.ProjectName].append(resource.Name)
+                assigned_resource_ids.add(resource.ResourceID)
+                logger.info(f"Assigned {resource.Name} to project '{project.ProjectName}' for role '{req['Role']}'.")
+            else:
+                # Resource already assigned, mark role as unfilled
+                unfilled_roles[req['Role']] +=1
+                logger.warning(f"Resource {resource.Name} already assigned. Cannot assign to project '{project.ProjectName}' for role '{req['Role']}'.")
 
-def main():
-    """Generates resources and projects, then saves them to JSON files."""
-    resources = generate_resources(NUM_RESOURCES)
-    projects = generate_projects(NUM_PROJECTS)
-    
-    # Save to JSON files
-    with open('sample_resources.json', 'w') as f:
-        json.dump(resources, f, indent=4)
-    
-    with open('sample_projects.json', 'w') as f:
-        json.dump(projects, f, indent=4)
-    
-    print(f"Generated {NUM_RESOURCES} resources and {NUM_PROJECTS} projects successfully.")
+        # Aggregate unfilled roles
+        for role, count in unfilled_roles.items():
+            unfilled_roles_overall[role] += count
+            logger.warning(f"Unfilled role '{role}': {count} position(s).")
+        
+        # Update the database with team assignments
+        for project in projects:
+            assigned_resources = [
+                res for res in resources if res.Name in project_assignments.get(project.ProjectName, [])
+            ]
+            total_resources = len(assigned_resources)
+            existing_team = Team.query.filter_by(ProjectID=project.ProjectID).first()
+            if existing_team:
+                # Assign resources to the team by setting their TeamID
+                for res in assigned_resources:
+                    res.TeamID = existing_team.TeamID
+                existing_team.TotalResources = total_resources
+                logger.info(f"Updated team for project '{project.ProjectName}' with {total_resources} resources.")
+            else:
+                # Create a new team for the project
+                new_team = Team(
+                    ProjectID=project.ProjectID,
+                    TotalResources=total_resources,
+                    OrgID=project.OrgID
+                )
+                db.session.add(new_team)
+                db.session.commit()  # Commit to generate TeamID
 
-if __name__ == "__main__":
-    main()
+                # Assign resources to the new team
+                for res in assigned_resources:
+                    res.TeamID = new_team.TeamID
+                new_team.TotalResources = total_resources
+                logger.info(f"Created team for project '{project.ProjectName}' with {total_resources} resources.")
+
+        # Commit all changes to the database
+        db.session.commit()
+        logger.info("All team assignments have been committed to the database.")
+
+    except Exception as e:
+        db.session.rollback()
+        logger.error(f"An error occurred during team assignment: {e}")
+        raise e
+
+    return project_assignments, dict(unfilled_roles_overall)
