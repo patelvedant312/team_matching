@@ -1,6 +1,15 @@
 # src/utils.py
 
 from decimal import Decimal
+import logging
+
+# Configure logging for the utils module
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s:%(name)s:%(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 def level_to_numeric(level):
     """
@@ -17,7 +26,10 @@ def level_to_numeric(level):
         'intermediate': Decimal('2'),
         'expert': Decimal('3')
     }
-    return levels.get(level.lower(), Decimal('0'))  # Returns 0 if level is unrecognized
+    numeric_level = levels.get(level.lower(), Decimal('0'))  # Returns 0 if level is unrecognized
+    if numeric_level == Decimal('0'):
+        logger.warning(f"Unrecognized skill level '{level}'. Defaulting to 0.")
+    return numeric_level
 
 def get_resource_skills_with_levels(resource):
     """
@@ -30,10 +42,12 @@ def get_resource_skills_with_levels(resource):
         dict: A dictionary mapping skill names to their levels.
     """
     skills_with_levels = {}
-    for skill in resource.Skills:
-        if ':' in skill:
-            skill_name, skill_level = skill.split(':', 1)
-            skills_with_levels[skill_name.strip().lower()] = skill_level.strip().lower()
+    try:
+        for skill_name, details in resource.Skills.items():
+            skill_level = details.get('level', 'beginner').strip().lower()
+            skills_with_levels[skill_name.strip().lower()] = skill_level
+    except AttributeError as e:
+        logger.error(f"Error parsing skills for resource {resource.Name}: {e}")
     return skills_with_levels
 
 def calculate_weight(resource, req, project):
@@ -56,34 +70,49 @@ def calculate_weight(resource, req, project):
     }
 
     # Rate: Lower rate is better
-    weight += weights_config['rate'] * (Decimal('100') - resource.Rate)  # Assuming rate <= 100
+    try:
+        rate = Decimal(resource.Rate)
+    except (ValueError, TypeError) as e:
+        logger.error(f"Invalid rate for resource {resource.Name}: {e}")
+        rate = Decimal('100')  # Assign a default high rate if invalid
 
-    # Experience: Sum of years in relevant past job titles
-    total_experience = 0
-    for title in resource.PastJobTitles:
-        try:
-            _, years = title.split(':')
-            total_experience += int(years.strip())
-        except:
-            continue
-    weight += weights_config['experience'] * Decimal(total_experience)
+    # Normalize rate to ensure it's not negative
+    rate = max(rate, Decimal('0'))
 
-    # Skill Level: Average required skill levels
-    required_skills = req.get('Skills', [])
+    # Calculate rate weight: higher rate decreases the weight
+    weight += weights_config['rate'] * (Decimal('100') - rate)
+
+    # Experience: Sum of years in all past job titles
+    total_experience = Decimal('0.0')
+    try:
+        for title, details in resource.PastJobTitles.items():
+            years = details.get('years', 0)
+            total_experience += Decimal(str(years))
+    except (ValueError, TypeError, AttributeError) as e:
+        logger.error(f"Error parsing past job titles for resource {resource.Name}: {e}")
+
+    weight += weights_config['experience'] * total_experience
+
+    # Skill Level: Average of resource's skill levels for required skills
+    required_skills = req.get('Skills', {})
     skill_levels = []
     resource_skills = get_resource_skills_with_levels(resource)
-    for skill in required_skills:
-        try:
-            skill_name, required_level = skill.split(':')
-            resource_level = resource_skills.get(skill_name.strip().lower(), 'beginner')
-            skill_numeric = level_to_numeric(resource_level)
-            skill_levels.append(skill_numeric)
-        except:
-            skill_levels.append(Decimal('0'))
+
+    for skill_name, details in required_skills.items():
+        required_level = details.get('level', 'beginner').strip().lower()
+        resource_level = resource_skills.get(skill_name.strip().lower(), 'beginner')
+        skill_numeric = level_to_numeric(resource_level)
+        skill_levels.append(skill_numeric)
+
     if skill_levels:
         avg_skill_level = sum(skill_levels) / Decimal(len(skill_levels))
     else:
         avg_skill_level = Decimal('0')
+
     weight += weights_config['skill_level'] * avg_skill_level
+
+    logger.debug(
+        f"Calculated weight for resource {resource.Name} for role '{req['Role']}' in project '{project.ProjectName}': {weight}"
+    )
 
     return weight
