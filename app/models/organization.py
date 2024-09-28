@@ -1,18 +1,18 @@
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.dialects.postgresql import ARRAY, JSONB
-from sqlalchemy import Column, Integer, String, Numeric, Date, ForeignKey
+from app.models import db  # Import db instance from models
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 class Organization(db.Model):
     __tablename__ = 'organizations'
-    OrgID = Column(Integer, primary_key=True)
-    OrgName = Column(String(100), nullable=False, unique=True)
+    
+    OrgID = db.Column(Integer, primary_key=True)
+    OrgName = db.Column(String(100), nullable=False, unique=True)
 
     # Relationships
-    resources = relationship('Resource', back_populates='organization', cascade='all, delete-orphan')
-    projects = relationship('Project', back_populates='organization', cascade='all, delete-orphan')
-    teams = relationship('Team', back_populates='organization', cascade='all, delete-orphan')
-    
+    resources = db.relationship('Resource', back_populates='organization', cascade='all, delete-orphan')
+    projects = db.relationship('Project', back_populates='organization', cascade='all, delete-orphan')
+    teams = db.relationship('Team', back_populates='organization', cascade='all, delete-orphan')
+
     def serialize(self):
         return {
             'OrgID': self.OrgID,

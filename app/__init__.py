@@ -1,19 +1,23 @@
 from flask import Flask
-from app.models import db  # Your SQLAlchemy instance
-from flask_migrate import Migrate  # Import Flask-Migrate
-from app.config.config import Config  # Import your config
+from app.models import db  # Import db from models
+from flask_migrate import Migrate
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object(Config)  # Load configuration from config file
+    app.config.from_object('app.config.config.Config')  # Load configuration
 
-    db.init_app(app)  # Initialize SQLAlchemy with the app
+    db.init_app(app)  # Initialize SQLAlchemy with the Flask app
+    migrate = Migrate(app, db)  # Initialize Flask-Migrate
 
-    # Initialize Flask-Migrate
-    migrate = Migrate(app, db)  # Add this line
-
-    # Register Blueprints (add other blueprints as necessary)
+    # Register Blueprints
     from app.api.resources import resources_bp
+    from app.api.projects import projects_bp
+    from app.api.teams import teams_bp
+    from app.api.organizations import organizations_bp
+
     app.register_blueprint(resources_bp)
+    app.register_blueprint(projects_bp)
+    app.register_blueprint(teams_bp)
+    app.register_blueprint(organizations_bp)
 
     return app
