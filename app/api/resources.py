@@ -19,21 +19,18 @@ def get_resource(id):
 @resources_bp.route('/resources', methods=['POST'])
 def create_resource():
     data = request.get_json()
-
     new_resource = Resource(
         Name=data['Name'],
-        Rate=data.get('Rate'),
-        PastJobTitles=data.get('PastJobTitles', []),
-        CurrentJobTitle=data.get('CurrentJobTitle'),
-        PastWorkDomains=data.get('PastWorkDomains', []),
-        YearsOfExperience=data.get('YearsOfExperience', 0),
+        Rate=data['Rate'],
+        Skills=data['Skills'],
+        PastJobTitles=data['PastJobTitles'],
+        Domain=data['Domain'],
         AvailableDate=data.get('AvailableDate'),
-        OrgID=data.get('OrgID')
+        OrgID=data['OrgID'],
+        TeamID=data.get('TeamID')  # TeamID is optional
     )
-
     db.session.add(new_resource)
     db.session.commit()
-
     return jsonify(new_resource.serialize()), 201
 
 # PUT (Update) existing resource
@@ -41,18 +38,15 @@ def create_resource():
 def update_resource(id):
     resource = Resource.query.get_or_404(id)
     data = request.get_json()
-
     resource.Name = data['Name']
-    resource.Rate = data.get('Rate')
-    resource.PastJobTitles = data.get('PastJobTitles', [])
-    resource.CurrentJobTitle = data.get('CurrentJobTitle')
-    resource.PastWorkDomains = data.get('PastWorkDomains', [])
-    resource.YearsOfExperience = data.get('YearsOfExperience', 0)
+    resource.Rate = data['Rate']
+    resource.Skills = data['Skills']
+    resource.PastJobTitles = data['PastJobTitles']
+    resource.Domain = data['Domain']
     resource.AvailableDate = data.get('AvailableDate')
-    resource.OrgID = data.get('OrgID')
-
+    resource.OrgID = data['OrgID']
+    resource.TeamID = data.get('TeamID')  # TeamID is optional
     db.session.commit()
-
     return jsonify(resource.serialize())
 
 # DELETE resource
@@ -61,5 +55,4 @@ def delete_resource(id):
     resource = Resource.query.get_or_404(id)
     db.session.delete(resource)
     db.session.commit()
-
     return jsonify({"message": "Resource deleted successfully"})

@@ -1,6 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()  # This is your database instance
+db = SQLAlchemy()
 
+# Import models here
 from app.models.organization import Organization
-from app.models.resource import Resource
+from app.models.team import Team
+from app.models.resource import Resource  
+from app.models.project import Project
