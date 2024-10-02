@@ -4,19 +4,19 @@ from app.models import Team, db
 teams_bp = Blueprint('teams', __name__)
 
 # GET all teams
-@teams_bp.route('/teams', methods=['GET'])
+@teams_bp.route('/', methods=['GET'])
 def get_teams():
     teams = Team.query.all()
     return jsonify([team.serialize() for team in teams])
 
 # GET team by ID
-@teams_bp.route('/teams/<int:id>', methods=['GET'])
+@teams_bp.route('/<int:id>', methods=['GET'])
 def get_team(id):
     team = Team.query.get_or_404(id)
     return jsonify(team.serialize())
 
 # POST (Create) new team
-@teams_bp.route('/teams', methods=['POST'])
+@teams_bp.route('/', methods=['POST'])
 def create_team():
     data = request.get_json()
     new_team = Team(
@@ -29,7 +29,7 @@ def create_team():
     return jsonify(new_team.serialize()), 201
 
 # PUT (Update) existing team
-@teams_bp.route('/teams/<int:id>', methods=['PUT'])
+@teams_bp.route('/<int:id>', methods=['PUT'])
 def update_team(id):
     team = Team.query.get_or_404(id)
     data = request.get_json()
@@ -40,7 +40,7 @@ def update_team(id):
     return jsonify(team.serialize())
 
 # DELETE team
-@teams_bp.route('/teams/<int:id>', methods=['DELETE'])
+@teams_bp.route('/<int:id>', methods=['DELETE'])
 def delete_team(id):
     team = Team.query.get_or_404(id)
     db.session.delete(team)

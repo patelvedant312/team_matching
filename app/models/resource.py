@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import JSONB, ARRAY
 class Resource(db.Model):
     __tablename__ = 'resources'
     
-    ResourceID = db.Column(Integer, primary_key=True)
+    ResourceID = db.Column(Integer, primary_key=True, autoincrement=True)
     Name = db.Column(String(100), nullable=False)
     Rate = db.Column(Numeric(10, 2), nullable=False)  # Using Numeric for precise decimals
     Skills = db.Column(JSONB, nullable=False)  # Storing skills as JSONB
