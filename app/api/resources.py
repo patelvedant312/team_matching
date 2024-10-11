@@ -1,65 +1,60 @@
+# api/resources.py
+
 from flask import Blueprint, request, jsonify
-from app.models import Resource, db
+from app.db.resources_db import (
+    get_all_resources,
+    get_resource_by_id,
+    create_new_resource,
+    update_resource,
+    delete_resource
+)
 
 resources_bp = Blueprint('resources', __name__)
 
 # GET all resources
-@resources_bp.route('/resources', methods=['GET'])
+@resources_bp.route('/', methods=['GET'])
 def get_resources():
-    resources = Resource.query.all()
-    return jsonify([resource.serialize() for resource in resources])
+    try:
+        resources = get_all_resources()
+        serialized_resources = [resource.serialize() for resource in resources]
+        return jsonify(serialized_resources), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # GET resource by ID
-@resources_bp.route('/resources/<int:id>', methods=['GET'])
+@resources_bp.route('/<int:id>', methods=['GET'])
 def get_resource(id):
-    resource = Resource.query.get_or_404(id)
-    return jsonify(resource.serialize())
+    try:
+        resource = get_resource_by_id(id)
+        return jsonify(resource.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # POST (Create) new resource
-@resources_bp.route('/resources', methods=['POST'])
+@resources_bp.route('/', methods=['POST'])
 def create_resource():
-    data = request.get_json()
-
-    new_resource = Resource(
-        Name=data['Name'],
-        Rate=data.get('Rate'),
-        PastJobTitles=data.get('PastJobTitles', []),
-        CurrentJobTitle=data.get('CurrentJobTitle'),
-        PastWorkDomains=data.get('PastWorkDomains', []),
-        YearsOfExperience=data.get('YearsOfExperience', 0),
-        AvailableDate=data.get('AvailableDate'),
-        OrgID=data.get('OrgID')
-    )
-
-    db.session.add(new_resource)
-    db.session.commit()
-
-    return jsonify(new_resource.serialize()), 201
+    try:
+        data = request.get_json()
+        new_resource = create_new_resource(data)
+        return jsonify(new_resource.serialize()), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # PUT (Update) existing resource
-@resources_bp.route('/resources/<int:id>', methods=['PUT'])
-def update_resource(id):
-    resource = Resource.query.get_or_404(id)
-    data = request.get_json()
-
-    resource.Name = data['Name']
-    resource.Rate = data.get('Rate')
-    resource.PastJobTitles = data.get('PastJobTitles', [])
-    resource.CurrentJobTitle = data.get('CurrentJobTitle')
-    resource.PastWorkDomains = data.get('PastWorkDomains', [])
-    resource.YearsOfExperience = data.get('YearsOfExperience', 0)
-    resource.AvailableDate = data.get('AvailableDate')
-    resource.OrgID = data.get('OrgID')
-
-    db.session.commit()
-
-    return jsonify(resource.serialize())
+@resources_bp.route('/<int:id>', methods=['PUT'])
+def update_resource_route(id):
+    try:
+        data = request.get_json()
+        updated_resource = update_resource(id, data)
+        return jsonify(updated_resource.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 # DELETE resource
-@resources_bp.route('/resources/<int:id>', methods=['DELETE'])
-def delete_resource(id):
-    resource = Resource.query.get_or_404(id)
-    db.session.delete(resource)
-    db.session.commit()
-
-    return jsonify({"message": "Resource deleted successfully"})
+@resources_bp.route('/<int:id>', methods=['DELETE'])
+def delete_resource_route(id):
+    try:
+        result = delete_resource(id)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
