@@ -1,46 +1,55 @@
+# api/organizations.py
+
 from flask import Blueprint, request, jsonify
-from app.models import Organization, db
-
-
+from app.db.organizations_db import (
+    get_all_organizations,
+    get_organization_by_id,
+    create_new_organization,
+    update_organization,
+    delete_organization
+)
 
 organizations_bp = Blueprint('organizations', __name__)
 
 @organizations_bp.route('/', methods=['GET'])
 def get_organizations():
-    organizations = Organization.query.all()
-    return jsonify([organization.serialize() for organization in organizations])
+    try:
+        organizations = get_all_organizations()
+        serialized_orgs = [org.serialize() for org in organizations]
+        return jsonify(serialized_orgs), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# GET organization by ID
 @organizations_bp.route('/<int:id>', methods=['GET'])
 def get_organization(id):
-   
-    organization = Organization.query.get_or_404(id)
-    return jsonify(organization.serialize())
+    try:
+        organization = get_organization_by_id(id)
+        return jsonify(organization.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# POST (Create) new organization
 @organizations_bp.route('/', methods=['POST'])
 def create_organization():
-    data = request.get_json()
-    new_organization = Organization(
-        OrgName=data['OrgName']
-    )
-    db.session.add(new_organization)
-    db.session.commit()
-    return jsonify(new_organization.serialize()), 201
+    try:
+        data = request.get_json()
+        new_organization = create_new_organization(data)
+        return jsonify(new_organization.serialize()), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# PUT (Update) existing organization
 @organizations_bp.route('/<int:id>', methods=['PUT'])
-def update_organization(id):
-    organization = Organization.query.get_or_404(id)
-    data = request.get_json()
-    organization.OrgName = data['OrgName']
-    db.session.commit()
-    return jsonify(organization.serialize())
+def update_organization_route(id):
+    try:
+        data = request.get_json()
+        updated_organization = update_organization(id, data)
+        return jsonify(updated_organization.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# DELETE organization
 @organizations_bp.route('/<int:id>', methods=['DELETE'])
-def delete_organization(id):
-    organization = Organization.query.get_or_404(id)
-    db.session.delete(organization)
-    db.session.commit()
-    return jsonify({"message": "Organization deleted successfully"})
+def delete_organization_route(id):
+    try:
+        result = delete_organization(id)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

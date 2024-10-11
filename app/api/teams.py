@@ -1,48 +1,55 @@
+# app/api/teams.py
+
 from flask import Blueprint, request, jsonify
-from app.models import Team, db
+from app.db.teams_db import (
+    get_all_teams,
+    get_team_by_id,
+    create_new_team,
+    update_team,
+    delete_team
+)
 
 teams_bp = Blueprint('teams', __name__)
 
-# GET all teams
 @teams_bp.route('/', methods=['GET'])
 def get_teams():
-    teams = Team.query.all()
-    return jsonify([team.serialize() for team in teams])
+    try:
+        teams = get_all_teams()
+        serialized_teams = [team.serialize() for team in teams]
+        return jsonify(serialized_teams), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# GET team by ID
 @teams_bp.route('/<int:id>', methods=['GET'])
 def get_team(id):
-    team = Team.query.get_or_404(id)
-    return jsonify(team.serialize())
+    try:
+        team = get_team_by_id(id)
+        return jsonify(team.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# POST (Create) new team
 @teams_bp.route('/', methods=['POST'])
 def create_team():
-    data = request.get_json()
-    new_team = Team(
-        ProjectID=data['ProjectID'],
-        TotalResources=data['TotalResources'],
-        OrgID=data['OrgID']
-    )
-    db.session.add(new_team)
-    db.session.commit()
-    return jsonify(new_team.serialize()), 201
+    try:
+        data = request.get_json()
+        new_team = create_new_team(data)
+        return jsonify(new_team.serialize()), 201
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# PUT (Update) existing team
 @teams_bp.route('/<int:id>', methods=['PUT'])
-def update_team(id):
-    team = Team.query.get_or_404(id)
-    data = request.get_json()
-    team.ProjectID = data['ProjectID']
-    team.TotalResources = data['TotalResources']
-    team.OrgID = data['OrgID']
-    db.session.commit()
-    return jsonify(team.serialize())
+def update_team_route(id):
+    try:
+        data = request.get_json()
+        updated_team = update_team(id, data)
+        return jsonify(updated_team.serialize()), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-# DELETE team
 @teams_bp.route('/<int:id>', methods=['DELETE'])
-def delete_team(id):
-    team = Team.query.get_or_404(id)
-    db.session.delete(team)
-    db.session.commit()
-    return jsonify({"message": "Team deleted successfully"})
+def delete_team_route(id):
+    try:
+        result = delete_team(id)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
