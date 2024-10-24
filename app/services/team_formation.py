@@ -55,7 +55,7 @@ def build_cost_matrix(projects, resources, weights):
         required_skills = req['Skills']
         for resource in resource_list:
             # Skip resources already assigned to a team
-            if resource.TeamID is not None:
+            if not resource.OnBench:
                 cost = Decimal('1000000')  # High cost to discourage assignment
             else:
                 resource_skills = get_resource_skills_with_levels(resource)
@@ -178,6 +178,7 @@ def match_resources_to_projects(project_id, resources):
             # Assign resources to the new team
             for res in assigned_resources:
                 res.TeamID = new_team.TeamID
+                res.OnBench = False 
             new_team.TotalResources = total_resources
             logger.info(f"Created team for project '{project.ProjectName}' with {total_resources} resources.")
             team = new_team

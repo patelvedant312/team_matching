@@ -55,8 +55,9 @@ def create_team(project_id):
         resources = Resource.query.filter(
             (Resource.AvailableDate == None) | 
             (Resource.AvailableDate > project.ProjectStartDate),
-            Resource.TeamID == None  # Exclude resources already assigned
+            Resource.OnBench == True  # Only resources that are on the bench
         ).all()
+
         logger.info(f"Found {len(resources)} available resources for project '{project.ProjectName}'.")
 
         if not resources:
