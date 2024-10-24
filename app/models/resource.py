@@ -1,5 +1,5 @@
 from app.models import db
-from sqlalchemy import Integer, String, Date, Numeric, ForeignKey
+from sqlalchemy import Integer, String, Date, Numeric, ForeignKey, Boolean 
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import JSONB, ARRAY
 
@@ -15,6 +15,7 @@ class Resource(db.Model):
     AvailableDate = db.Column(Date, nullable=True)
     OrgID = db.Column(Integer, ForeignKey('organizations.OrgID'), nullable=False)
     TeamID = db.Column(Integer, ForeignKey('teams.TeamID'), nullable=True)  # Nullable if not assigned to a team
+    OnBench = db.Column(Boolean, default=True)
     
     # Relationships
     organization = relationship('Organization', back_populates='resources')
@@ -32,6 +33,7 @@ class Resource(db.Model):
             'AvailableDate': self.AvailableDate.isoformat() if self.AvailableDate else None,
             'OrgID': self.OrgID,
             'TeamID': self.TeamID,
+            'OnBench': self.OnBench
             # Optionally, you can serialize related objects like 'organization' or 'team'
             # 'organization': self.organization.serialize() if self.organization else None,
             # 'team': self.team.serialize() if self.team else None
