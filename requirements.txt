@@ -121,7 +121,6 @@ pycparser==2.22
 pydantic==2.5.3
 pydantic_core==2.14.6
 pydeck==0.9.1
-pygame==2.1.2
 Pygments==2.18.0
 PyMySQL==1.0.2
 PyQt5==5.15.10
