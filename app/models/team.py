@@ -1,5 +1,5 @@
 from app.models import db
-from sqlalchemy import Integer, ForeignKey
+from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 class Team(db.Model):
@@ -8,7 +8,7 @@ class Team(db.Model):
     TeamID = db.Column(Integer, primary_key=True)
     ProjectID = db.Column(Integer, ForeignKey('projects.ProjectID'), nullable=False, unique=True)
     TotalResources = db.Column(Integer, nullable=False)
-    OrgID = db.Column(Integer, ForeignKey('organizations.OrgID'), nullable=False)
+    OrgID = db.Column(String, ForeignKey('organizations.OrgID'), nullable=False)
     
     # Relationships
     project = relationship('Project', back_populates='team')

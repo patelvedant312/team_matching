@@ -1,3 +1,4 @@
+import os
 import json
 import random
 from faker import Faker
@@ -8,7 +9,7 @@ fake = Faker()
 # Configuration
 NUM_RESOURCES = 65
 NUM_PROJECTS = 12
-NUM_ORGANIZATIONS = 3  # Assuming OrgID ranges from 1 to 3
+NUM_ORGANIZATIONS = 2  # Assuming OrgID ranges from "1" to "3"
 
 # Predefined Lists
 SKILLS = [
@@ -155,9 +156,8 @@ JOB_TITLES = [
 ]
 
 ORGANIZATIONS = [
-    {"OrgID": 1, "OrgName": "OrgA"},
-    {"OrgID": 2, "OrgName": "OrgB"},
-    {"OrgID": 3, "OrgName": "OrgC"}
+    {"OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P", "OrgName": "Apt 276"},
+    {"OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P", "OrgName": "Apt 273"}
 ]
 
 def generate_resources(num_resources):
@@ -189,9 +189,12 @@ def generate_resources(num_resources):
         # Available date within the next 90 days
         available_date = fake.date_between(start_date='today', end_date='+90d').strftime('%Y-%m-%d')
         
-        # Random OrgID
+        # Random OrgID as string
         org = random.choice(ORGANIZATIONS)
         org_id = org["OrgID"]
+        
+        # OnBench is default True, but we can randomize it if needed
+        OnBench = True  # You can set to random.choice([True, False]) if desired
         
         resource = {
             "ResourceID": i,
@@ -201,7 +204,9 @@ def generate_resources(num_resources):
             "PastJobTitles": past_jobs,
             "Domain": domains,
             "AvailableDate": available_date,
-            "OrgID": org_id
+            "OrgID": org_id,  # OrgID is now a string
+            "TeamID": None,  # Initially not assigned to any team
+            "OnBench": OnBench
         }
         resources.append(resource)
     return resources
@@ -211,7 +216,7 @@ def generate_projects(num_projects):
     for i in range(1, num_projects + 1):
         project_name = PROJECT_NAMES[i - 1]  # Ensure unique names
         org = random.choice(ORGANIZATIONS)
-        org_id = org["OrgID"]
+        org_id = org["OrgID"]  # OrgID is now a string
         
         # Assign 2-4 required resources
         num_required = random.randint(2, 4)
@@ -249,7 +254,7 @@ def generate_projects(num_projects):
         project = {
             "ProjectID": i,
             "ProjectName": project_name,
-            "OrgID": org_id,
+            "OrgID": org_id,  # OrgID is now a string
             "RequiredResources": required_resources,
             "NumberOfDays": number_of_days,
             "ProjectStartDate": project_start_date,
@@ -263,11 +268,16 @@ def main():
     resources = generate_resources(NUM_RESOURCES)
     projects = generate_projects(NUM_PROJECTS)
     
+    # Ensure data directory exists
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    
     # Save to JSON files
-    with open('data/sample_resources.json', 'w') as f:
+    with open(os.path.join(data_dir, 'sample_resources.json'), 'w') as f:
         json.dump(resources, f, indent=4)
     
-    with open('data/sample_projects.json', 'w') as f:
+    with open(os.path.join(data_dir, 'sample_projects.json'), 'w') as f:
         json.dump(projects, f, indent=4)
     
     print(f"Generated {NUM_RESOURCES} resources and {NUM_PROJECTS} projects successfully.")

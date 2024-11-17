@@ -13,7 +13,7 @@ class Resource(db.Model):
     PastJobTitles = db.Column(JSONB, nullable=False)  # Storing past job titles as JSONB
     Domain = db.Column(ARRAY(String), nullable=False)  # Storing domains as an array of strings
     AvailableDate = db.Column(Date, nullable=True)
-    OrgID = db.Column(Integer, ForeignKey('organizations.OrgID'), nullable=False)
+    OrgID = db.Column(String, ForeignKey('organizations.OrgID'), nullable=False)
     TeamID = db.Column(Integer, ForeignKey('teams.TeamID'), nullable=True)  # Nullable if not assigned to a team
     OnBench = db.Column(Boolean, default=True)
     

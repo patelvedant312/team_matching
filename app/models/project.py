@@ -8,7 +8,7 @@ class Project(db.Model):
     
     ProjectID = db.Column(Integer, primary_key=True)
     ProjectName = db.Column(String(100), nullable=False, unique=True)
-    OrgID = db.Column(Integer, ForeignKey('organizations.OrgID'), nullable=False)
+    OrgID = db.Column(String, ForeignKey('organizations.OrgID'), nullable=False)
     RequiredResources = db.Column(JSONB, nullable=False)  # Storing required resources as JSONB
     NumberOfDays = db.Column(Integer, nullable=False)
     ProjectStartDate = db.Column(Date, nullable=False)

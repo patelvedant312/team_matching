@@ -20,7 +20,7 @@ def get_organizations():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@organizations_bp.route('/<int:id>', methods=['GET'])
+@organizations_bp.route('/<string:id>', methods=['GET'])
 def get_organization(id):
     try:
         organization = get_organization_by_id(id)
@@ -37,7 +37,7 @@ def create_organization():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@organizations_bp.route('/<int:id>', methods=['PUT'])
+@organizations_bp.route('/<string:id>', methods=['PUT'])
 def update_organization_route(id):
     try:
         data = request.get_json()
@@ -46,7 +46,7 @@ def update_organization_route(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@organizations_bp.route('/<int:id>', methods=['DELETE'])
+@organizations_bp.route('/<string:id>', methods=['DELETE'])
 def delete_organization_route(id):
     try:
         result = delete_organization(id)

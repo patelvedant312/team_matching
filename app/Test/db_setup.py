@@ -1,24 +1,32 @@
-# src/Test/db_setup.py
+# app/Test/db_setup.py
 
 import os
+import sys
 import json
 import logging
 from datetime import datetime
 from decimal import Decimal
-from src.Test import create_app, db
-from src.Test.models import Organization, Resource, Project, Team
-from src.Test.utils import get_resource_skills_with_levels
+
+# Add the project root directory to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from app import create_app, db
+from app.models.organization import Organization
+from app.models.resource import Resource
+from app.models.project import Project
+from app.models.team import Team
+from app.services.utils import get_resource_skills_with_levels
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Predefined Organizations
+# Predefined Organizations with OrgID as strings
+
 ORGANIZATIONS = [
-    {"OrgID": 1, "OrgName": "OrgA"},
-    {"OrgID": 2, "OrgName": "OrgB"},
-    {"OrgID": 3, "OrgName": "OrgC"}
-]
+    {"OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P", "OrgName": "Apt 276"},
+    {"OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P", "OrgName": "Apt 273"}
+  ]
 
 def drop_all_tables():
     db.drop_all()
@@ -52,7 +60,7 @@ def populate_initial_data():
         db.session.commit()
         
         # 2. Populate Resources
-        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../..', 'data')
+        data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data'))
         resources_file = os.path.join(data_dir, 'sample_resources.json')
         if os.path.exists(resources_file):
             with open(resources_file, 'r') as f:
@@ -66,11 +74,14 @@ def populate_initial_data():
                         PastJobTitles=user.get('PastJobTitles', {}),
                         Domain=user.get('Domain', []),
                         AvailableDate=datetime.strptime(user['AvailableDate'], '%Y-%m-%d') if user.get('AvailableDate') else None,
-                        OrgID=user.get('OrgID'),
-                        TeamID=None
+                        OrgID=user.get('OrgID'),  # OrgID is now a string
+                        TeamID=user.get('TeamID'),  # Initially None
+                        OnBench=user.get('OnBench', True)  # Default to True if not specified
                     )
                     db.session.merge(resource)
                     logger.info(f"Added/Updated resource: {resource.Name}")
+        else:
+            logger.error(f"Resources file not found at {resources_file}")
         logger.info("Resources populated.")
         
         db.session.commit()
@@ -89,10 +100,12 @@ def populate_initial_data():
                         Technology=project_data['Technology'],
                         Domain=project_data['Domain'],
                         RequiredResources=project_data['RequiredResources'],
-                        OrgID=project_data['OrgID']
+                        OrgID=project_data['OrgID']  # OrgID is now a string
                     )
                     db.session.merge(project)
                     logger.info(f"Added/Updated project: {project.ProjectName}")
+        else:
+            logger.error(f"Projects file not found at {projects_file}")
         logger.info("Projects populated.")
         
         db.session.commit()
@@ -103,7 +116,7 @@ def populate_initial_data():
             team = Team(
                 ProjectID=project.ProjectID,
                 TotalResources=0,
-                OrgID=project.OrgID
+                OrgID=project.OrgID  # OrgID is a string
             )
             db.session.add(team)
             db.session.commit()  # Commit to generate TeamID
@@ -115,9 +128,10 @@ def populate_initial_data():
                 required_skills = req["Skills"]
                 quantity = req["Quantity"]
         
-                # Fetch resources that match the required skills and domain, and are not yet assigned to any team
+                # Fetch resources that match the required skills and domain, are on bench, and not yet assigned to any team
                 matching_resources = Resource.query.filter(
                     Resource.Domain.overlap(project.Domain),
+                    Resource.OnBench == True,
                     Resource.TeamID == None
                 ).all()
         
@@ -140,6 +154,7 @@ def populate_initial_data():
                 # Assign selected resources to the team
                 for res in selected_resources:
                     res.TeamID = team.TeamID
+                    res.OnBench = False  # Resource is no longer on bench
                     team.TotalResources += 1
                     logger.info(f"Assigned resource '{res.Name}' to team of project '{project.ProjectName}' for role '{role}'.")
         

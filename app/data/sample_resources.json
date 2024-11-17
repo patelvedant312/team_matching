@@ -1,0 +1,2422 @@
+[
+    {
+        "ResourceID": 1,
+        "Name": "Eric Davis",
+        "Rate": 76.33,
+        "Skills": {
+            "Objective-C": {
+                "level": "intermediate"
+            },
+            "Java": {
+                "level": "expert"
+            },
+            "Django": {
+                "level": "beginner"
+            },
+            "React": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "DevOps Engineer": {
+                "years": 5.1
+            },
+            "Blockchain Developer": {
+                "years": 1.9
+            },
+            "Backend Developer": {
+                "years": 5.5
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Gaming",
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-01-22",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 2,
+        "Name": "Heather Martin",
+        "Rate": 66.16,
+        "Skills": {
+            "Kubernetes": {
+                "level": "beginner"
+            },
+            "Rails": {
+                "level": "expert"
+            },
+            "React Native": {
+                "level": "expert"
+            },
+            "3D Modeling": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Financial Analyst": {
+                "years": 8.9
+            },
+            "AI Engineer": {
+                "years": 1.3
+            },
+            "Robotics Engineer": {
+                "years": 2.5
+            },
+            "DevOps Engineer": {
+                "years": 9.8
+            }
+        },
+        "Domain": [
+            "Finance",
+            "Media"
+        ],
+        "AvailableDate": "2025-01-23",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 3,
+        "Name": "Denise Garcia",
+        "Rate": 60.33,
+        "Skills": {
+            "Node.js": {
+                "level": "intermediate"
+            },
+            "JavaScript": {
+                "level": "beginner"
+            },
+            "SQL": {
+                "level": "intermediate"
+            },
+            "Docker": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 1.2
+            },
+            "Robotics Engineer": {
+                "years": 9.8
+            }
+        },
+        "Domain": [
+            "Healthcare",
+            "Education",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2025-01-30",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 4,
+        "Name": "Robert Kemp",
+        "Rate": 67.17,
+        "Skills": {
+            "Kubernetes": {
+                "level": "expert"
+            },
+            "Node.js": {
+                "level": "intermediate"
+            },
+            "C#": {
+                "level": "intermediate"
+            },
+            "Solidity": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "3D Designer": {
+                "years": 6.3
+            },
+            "AI Engineer": {
+                "years": 4.1
+            }
+        },
+        "Domain": [
+            "E-commerce",
+            "Healthcare",
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-01-10",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 5,
+        "Name": "Dr. Patricia Hamilton",
+        "Rate": 77.26,
+        "Skills": {
+            "Go": {
+                "level": "expert"
+            },
+            "HTML": {
+                "level": "expert"
+            },
+            "Kubernetes": {
+                "level": "beginner"
+            },
+            "DevOps": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Data Scientist": {
+                "years": 5.8
+            },
+            "Financial Analyst": {
+                "years": 5.3
+            }
+        },
+        "Domain": [
+            "Communication"
+        ],
+        "AvailableDate": "2025-01-19",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 6,
+        "Name": "Emily Wood",
+        "Rate": 73.83,
+        "Skills": {
+            "React Native": {
+                "level": "intermediate"
+            },
+            "WebSockets": {
+                "level": "intermediate"
+            },
+            "TypeScript": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "DevOps Engineer": {
+                "years": 5.9
+            },
+            "Data Engineer": {
+                "years": 8.0
+            }
+        },
+        "Domain": [
+            "Gaming",
+            "Cloud Computing",
+            "Education"
+        ],
+        "AvailableDate": "2024-12-10",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 7,
+        "Name": "Adrian Kelly",
+        "Rate": 54.17,
+        "Skills": {
+            "Financial Modeling": {
+                "level": "intermediate"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Objective-C": {
+                "level": "expert"
+            },
+            "WebSockets": {
+                "level": "beginner"
+            },
+            "CSS": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Financial Analyst": {
+                "years": 3.0
+            },
+            "Data Scientist": {
+                "years": 2.0
+            },
+            "Cloud Engineer": {
+                "years": 3.9
+            },
+            "Backend Developer": {
+                "years": 6.1
+            }
+        },
+        "Domain": [
+            "Finance"
+        ],
+        "AvailableDate": "2024-12-26",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 8,
+        "Name": "Wyatt Rivera",
+        "Rate": 58.51,
+        "Skills": {
+            "Swift": {
+                "level": "beginner"
+            },
+            "TensorFlow": {
+                "level": "intermediate"
+            },
+            "CSS": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "AI Engineer": {
+                "years": 4.1
+            },
+            "System Administrator": {
+                "years": 3.6
+            }
+        },
+        "Domain": [
+            "Retail",
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2024-12-17",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 9,
+        "Name": "Julie Reynolds",
+        "Rate": 69.11,
+        "Skills": {
+            "ETL": {
+                "level": "beginner"
+            },
+            "3D Modeling": {
+                "level": "intermediate"
+            },
+            "CSS": {
+                "level": "intermediate"
+            },
+            "Django": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Cloud Engineer": {
+                "years": 3.6
+            },
+            "Blockchain Developer": {
+                "years": 7.8
+            },
+            "DevOps Engineer": {
+                "years": 7.9
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2025-01-23",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 10,
+        "Name": "Allen Larsen",
+        "Rate": 64.53,
+        "Skills": {
+            "Kubernetes": {
+                "level": "beginner"
+            },
+            "C++": {
+                "level": "expert"
+            },
+            "C#": {
+                "level": "beginner"
+            },
+            "JavaScript": {
+                "level": "intermediate"
+            },
+            "TypeScript": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Data Analyst": {
+                "years": 8.8
+            },
+            "Full Stack Developer": {
+                "years": 4.4
+            }
+        },
+        "Domain": [
+            "Healthcare"
+        ],
+        "AvailableDate": "2025-02-04",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 11,
+        "Name": "Samantha Porter",
+        "Rate": 93.58,
+        "Skills": {
+            "CSS": {
+                "level": "intermediate"
+            },
+            "Unity": {
+                "level": "intermediate"
+            },
+            "TypeScript": {
+                "level": "intermediate"
+            },
+            "JavaScript": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Blockchain Developer": {
+                "years": 3.3
+            },
+            "Smart Contract Developer": {
+                "years": 6.6
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Gaming"
+        ],
+        "AvailableDate": "2025-01-09",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 12,
+        "Name": "Gerald Richards",
+        "Rate": 42.84,
+        "Skills": {
+            "3D Modeling": {
+                "level": "expert"
+            },
+            "DevOps": {
+                "level": "beginner"
+            },
+            "Blockchain": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Full Stack Developer": {
+                "years": 4.1
+            },
+            "Financial Analyst": {
+                "years": 8.8
+            }
+        },
+        "Domain": [
+            "Education",
+            "Finance"
+        ],
+        "AvailableDate": "2024-12-26",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 13,
+        "Name": "Christina Deleon",
+        "Rate": 58.0,
+        "Skills": {
+            "HTML": {
+                "level": "expert"
+            },
+            "Kubernetes": {
+                "level": "expert"
+            },
+            "C++": {
+                "level": "intermediate"
+            },
+            "GraphQL": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Data Engineer": {
+                "years": 2.8
+            },
+            "Database Administrator": {
+                "years": 2.7
+            }
+        },
+        "Domain": [
+            "Gaming",
+            "Finance"
+        ],
+        "AvailableDate": "2025-02-09",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 14,
+        "Name": "Jacqueline Green",
+        "Rate": 83.35,
+        "Skills": {
+            "Unity": {
+                "level": "expert"
+            },
+            "Java": {
+                "level": "intermediate"
+            },
+            "Blockchain": {
+                "level": "expert"
+            },
+            "Financial Modeling": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Database Administrator": {
+                "years": 4.3
+            },
+            "Full Stack Developer": {
+                "years": 2.8
+            },
+            "Smart Contract Developer": {
+                "years": 9.2
+            }
+        },
+        "Domain": [
+            "Education",
+            "Autonomous Systems",
+            "Media"
+        ],
+        "AvailableDate": "2025-02-01",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 15,
+        "Name": "Christopher Woods",
+        "Rate": 62.87,
+        "Skills": {
+            "Swift": {
+                "level": "expert"
+            },
+            "C++": {
+                "level": "intermediate"
+            },
+            "TypeScript": {
+                "level": "beginner"
+            },
+            "HTML": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 9.7
+            },
+            "Blockchain Developer": {
+                "years": 1.5
+            }
+        },
+        "Domain": [
+            "Autonomous Systems",
+            "Gaming",
+            "E-commerce"
+        ],
+        "AvailableDate": "2024-11-24",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 16,
+        "Name": "Samuel Roach",
+        "Rate": 88.85,
+        "Skills": {
+            "Express": {
+                "level": "beginner"
+            },
+            "HTML": {
+                "level": "beginner"
+            },
+            "ETL": {
+                "level": "expert"
+            },
+            "Unity": {
+                "level": "intermediate"
+            },
+            "3D Modeling": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 3.4
+            },
+            "Cloud Engineer": {
+                "years": 2.7
+            },
+            "Database Administrator": {
+                "years": 5.7
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Healthcare",
+            "E-commerce"
+        ],
+        "AvailableDate": "2025-01-05",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 17,
+        "Name": "Kristin Nelson",
+        "Rate": 79.46,
+        "Skills": {
+            "DevOps": {
+                "level": "expert"
+            },
+            "C++": {
+                "level": "intermediate"
+            },
+            "React": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Software Engineer": {
+                "years": 2.2
+            },
+            "AI Engineer": {
+                "years": 7.6
+            },
+            "3D Designer": {
+                "years": 1.6
+            }
+        },
+        "Domain": [
+            "Retail"
+        ],
+        "AvailableDate": "2024-12-15",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 18,
+        "Name": "Kevin Robinson",
+        "Rate": 42.87,
+        "Skills": {
+            "Ruby": {
+                "level": "intermediate"
+            },
+            "TensorFlow": {
+                "level": "intermediate"
+            },
+            "Python": {
+                "level": "intermediate"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Redux": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Software Engineer": {
+                "years": 4.6
+            },
+            "Blockchain Developer": {
+                "years": 3.1
+            },
+            "AI Engineer": {
+                "years": 9.2
+            },
+            "System Administrator": {
+                "years": 10.0
+            }
+        },
+        "Domain": [
+            "Autonomous Systems",
+            "Cloud Computing",
+            "Media"
+        ],
+        "AvailableDate": "2024-11-28",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 19,
+        "Name": "Ian Douglas",
+        "Rate": 94.79,
+        "Skills": {
+            "C++": {
+                "level": "intermediate"
+            },
+            "NLP": {
+                "level": "intermediate"
+            },
+            "Kubernetes": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Data Scientist": {
+                "years": 9.0
+            },
+            "Database Administrator": {
+                "years": 9.4
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Autonomous Systems",
+            "Gaming"
+        ],
+        "AvailableDate": "2024-12-01",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 20,
+        "Name": "Stephanie Jones",
+        "Rate": 64.81,
+        "Skills": {
+            "Go": {
+                "level": "intermediate"
+            },
+            "React": {
+                "level": "intermediate"
+            },
+            "Java": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Machine Learning Engineer": {
+                "years": 1.7
+            },
+            "Data Analyst": {
+                "years": 3.3
+            }
+        },
+        "Domain": [
+            "Healthcare",
+            "Media",
+            "Finance"
+        ],
+        "AvailableDate": "2025-01-18",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 21,
+        "Name": "Taylor Burke",
+        "Rate": 48.86,
+        "Skills": {
+            "Express": {
+                "level": "expert"
+            },
+            "Java": {
+                "level": "intermediate"
+            },
+            "Node.js": {
+                "level": "beginner"
+            },
+            "CSS": {
+                "level": "beginner"
+            },
+            "Kubernetes": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Frontend Developer": {
+                "years": 1.5
+            },
+            "Blockchain Developer": {
+                "years": 8.5
+            }
+        },
+        "Domain": [
+            "Gaming"
+        ],
+        "AvailableDate": "2024-12-14",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 22,
+        "Name": "Joshua Roberts",
+        "Rate": 90.8,
+        "Skills": {
+            "JavaScript": {
+                "level": "beginner"
+            },
+            "C#": {
+                "level": "expert"
+            },
+            "Financial Modeling": {
+                "level": "expert"
+            },
+            "NLP": {
+                "level": "beginner"
+            },
+            "Solidity": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Blockchain Developer": {
+                "years": 8.1
+            },
+            "Full Stack Developer": {
+                "years": 7.4
+            }
+        },
+        "Domain": [
+            "Gaming"
+        ],
+        "AvailableDate": "2025-01-24",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 23,
+        "Name": "David Carter",
+        "Rate": 94.1,
+        "Skills": {
+            "C#": {
+                "level": "expert"
+            },
+            "Flask": {
+                "level": "beginner"
+            },
+            "React Native": {
+                "level": "beginner"
+            },
+            "GraphQL": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 7.4
+            },
+            "Software Engineer": {
+                "years": 8.7
+            }
+        },
+        "Domain": [
+            "Healthcare",
+            "Communication"
+        ],
+        "AvailableDate": "2024-12-31",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 24,
+        "Name": "Timothy Porter",
+        "Rate": 66.15,
+        "Skills": {
+            "WebSockets": {
+                "level": "intermediate"
+            },
+            "Data Science": {
+                "level": "expert"
+            },
+            "Redux": {
+                "level": "beginner"
+            },
+            "Node.js": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Backend Developer": {
+                "years": 6.5
+            },
+            "AI Engineer": {
+                "years": 4.0
+            },
+            "Frontend Developer": {
+                "years": 9.0
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Education",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2024-12-16",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 25,
+        "Name": "Erin Hudson",
+        "Rate": 96.43,
+        "Skills": {
+            "Java": {
+                "level": "intermediate"
+            },
+            "ETL": {
+                "level": "beginner"
+            },
+            "GraphQL": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 5.2
+            },
+            "Robotics Engineer": {
+                "years": 6.3
+            }
+        },
+        "Domain": [
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-02-03",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 26,
+        "Name": "Samantha Guerrero",
+        "Rate": 53.91,
+        "Skills": {
+            "ETL": {
+                "level": "intermediate"
+            },
+            "C++": {
+                "level": "expert"
+            },
+            "Objective-C": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 4.4
+            },
+            "Data Scientist": {
+                "years": 3.9
+            },
+            "Software Engineer": {
+                "years": 2.2
+            },
+            "3D Designer": {
+                "years": 2.5
+            }
+        },
+        "Domain": [
+            "Finance",
+            "E-commerce",
+            "Gaming"
+        ],
+        "AvailableDate": "2024-12-04",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 27,
+        "Name": "Matthew Williams",
+        "Rate": 91.45,
+        "Skills": {
+            "Flask": {
+                "level": "intermediate"
+            },
+            "ETL": {
+                "level": "expert"
+            },
+            "WebSockets": {
+                "level": "beginner"
+            },
+            "React Native": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Software Engineer": {
+                "years": 3.1
+            },
+            "3D Designer": {
+                "years": 1.8
+            },
+            "UI/UX Designer": {
+                "years": 7.3
+            },
+            "Robotics Engineer": {
+                "years": 7.4
+            }
+        },
+        "Domain": [
+            "Gaming",
+            "Finance"
+        ],
+        "AvailableDate": "2024-12-18",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 28,
+        "Name": "Jennifer Singh",
+        "Rate": 85.98,
+        "Skills": {
+            "JavaScript": {
+                "level": "expert"
+            },
+            "TypeScript": {
+                "level": "expert"
+            },
+            "Machine Learning": {
+                "level": "beginner"
+            },
+            "Blockchain": {
+                "level": "expert"
+            },
+            "Docker": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "3D Designer": {
+                "years": 2.1
+            },
+            "Cloud Engineer": {
+                "years": 1.8
+            }
+        },
+        "Domain": [
+            "Finance",
+            "Media",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2024-12-07",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 29,
+        "Name": "Derrick Hernandez",
+        "Rate": 67.58,
+        "Skills": {
+            "JavaScript": {
+                "level": "beginner"
+            },
+            "React": {
+                "level": "beginner"
+            },
+            "TypeScript": {
+                "level": "beginner"
+            },
+            "Data Engineering": {
+                "level": "expert"
+            },
+            "Rails": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Backend Developer": {
+                "years": 9.1
+            },
+            "Software Engineer": {
+                "years": 2.7
+            }
+        },
+        "Domain": [
+            "Retail"
+        ],
+        "AvailableDate": "2024-12-20",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 30,
+        "Name": "Rachel Powell",
+        "Rate": 78.15,
+        "Skills": {
+            "Java": {
+                "level": "expert"
+            },
+            "AWS": {
+                "level": "expert"
+            },
+            "React Native": {
+                "level": "intermediate"
+            },
+            "TypeScript": {
+                "level": "beginner"
+            },
+            "Data Science": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Data Engineer": {
+                "years": 6.0
+            },
+            "Smart Contract Developer": {
+                "years": 8.8
+            },
+            "DevOps Engineer": {
+                "years": 2.8
+            }
+        },
+        "Domain": [
+            "E-commerce"
+        ],
+        "AvailableDate": "2025-01-30",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 31,
+        "Name": "Robert Ball",
+        "Rate": 52.73,
+        "Skills": {
+            "Machine Learning": {
+                "level": "intermediate"
+            },
+            "Swift": {
+                "level": "expert"
+            },
+            "Express": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "DevOps Engineer": {
+                "years": 9.7
+            },
+            "Robotics Engineer": {
+                "years": 6.5
+            },
+            "UI/UX Designer": {
+                "years": 8.7
+            }
+        },
+        "Domain": [
+            "Finance",
+            "Cloud Computing",
+            "Education"
+        ],
+        "AvailableDate": "2025-01-29",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 32,
+        "Name": "Donald Williams",
+        "Rate": 90.76,
+        "Skills": {
+            "Django": {
+                "level": "intermediate"
+            },
+            "WebSockets": {
+                "level": "expert"
+            },
+            "Ruby": {
+                "level": "expert"
+            },
+            "ETL": {
+                "level": "intermediate"
+            },
+            "Financial Modeling": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Database Administrator": {
+                "years": 8.4
+            },
+            "Software Engineer": {
+                "years": 2.1
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Education",
+            "Media"
+        ],
+        "AvailableDate": "2024-12-10",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 33,
+        "Name": "Karl Lawson",
+        "Rate": 76.76,
+        "Skills": {
+            "Financial Modeling": {
+                "level": "beginner"
+            },
+            "Machine Learning": {
+                "level": "expert"
+            },
+            "NLP": {
+                "level": "beginner"
+            },
+            "HTML": {
+                "level": "beginner"
+            },
+            "ETL": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 5.4
+            },
+            "Financial Analyst": {
+                "years": 4.7
+            }
+        },
+        "Domain": [
+            "Media",
+            "Education"
+        ],
+        "AvailableDate": "2024-12-25",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 34,
+        "Name": "Mary Smith",
+        "Rate": 87.29,
+        "Skills": {
+            "TypeScript": {
+                "level": "beginner"
+            },
+            "Objective-C": {
+                "level": "intermediate"
+            },
+            "Go": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "AI Engineer": {
+                "years": 4.0
+            },
+            "DevOps Engineer": {
+                "years": 5.5
+            },
+            "Smart Contract Developer": {
+                "years": 6.2
+            },
+            "NLP Specialist": {
+                "years": 8.9
+            }
+        },
+        "Domain": [
+            "Retail"
+        ],
+        "AvailableDate": "2025-02-03",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 35,
+        "Name": "Donna Paul DVM",
+        "Rate": 62.42,
+        "Skills": {
+            "Rails": {
+                "level": "beginner"
+            },
+            "Flask": {
+                "level": "intermediate"
+            },
+            "Data Analysis": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Machine Learning Engineer": {
+                "years": 5.4
+            },
+            "Smart Contract Developer": {
+                "years": 7.7
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Retail",
+            "Communication"
+        ],
+        "AvailableDate": "2024-11-21",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 36,
+        "Name": "Laura Brown",
+        "Rate": 69.56,
+        "Skills": {
+            "Rails": {
+                "level": "beginner"
+            },
+            "Financial Modeling": {
+                "level": "beginner"
+            },
+            "Django": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "NLP Specialist": {
+                "years": 1.1
+            },
+            "AI Engineer": {
+                "years": 7.6
+            },
+            "3D Designer": {
+                "years": 4.7
+            },
+            "System Administrator": {
+                "years": 8.2
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Gaming",
+            "E-commerce"
+        ],
+        "AvailableDate": "2025-01-12",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 37,
+        "Name": "Joshua Brown",
+        "Rate": 83.48,
+        "Skills": {
+            "SQL": {
+                "level": "beginner"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "NLP": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 2.0
+            },
+            "Database Administrator": {
+                "years": 2.9
+            }
+        },
+        "Domain": [
+            "Finance",
+            "Healthcare"
+        ],
+        "AvailableDate": "2024-12-24",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 38,
+        "Name": "Ralph Wood",
+        "Rate": 52.8,
+        "Skills": {
+            "C++": {
+                "level": "intermediate"
+            },
+            "CSS": {
+                "level": "beginner"
+            },
+            "Express": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "3D Designer": {
+                "years": 8.9
+            },
+            "Cloud Engineer": {
+                "years": 3.6
+            }
+        },
+        "Domain": [
+            "Autonomous Systems",
+            "Gaming"
+        ],
+        "AvailableDate": "2024-12-14",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 39,
+        "Name": "Kayla Smith",
+        "Rate": 93.34,
+        "Skills": {
+            "GraphQL": {
+                "level": "expert"
+            },
+            "Ruby": {
+                "level": "intermediate"
+            },
+            "HTML": {
+                "level": "expert"
+            },
+            "TensorFlow": {
+                "level": "expert"
+            },
+            "Express": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "System Administrator": {
+                "years": 2.8
+            },
+            "Robotics Engineer": {
+                "years": 7.1
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2025-01-21",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 40,
+        "Name": "Amy Gibson",
+        "Rate": 95.15,
+        "Skills": {
+            "Data Engineering": {
+                "level": "intermediate"
+            },
+            "AWS": {
+                "level": "intermediate"
+            },
+            "Kubernetes": {
+                "level": "beginner"
+            },
+            "TypeScript": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 1.9
+            },
+            "Frontend Developer": {
+                "years": 4.8
+            },
+            "DevOps Engineer": {
+                "years": 8.4
+            },
+            "Data Scientist": {
+                "years": 4.3
+            }
+        },
+        "Domain": [
+            "Healthcare",
+            "Media"
+        ],
+        "AvailableDate": "2025-01-09",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 41,
+        "Name": "Alexander Sanders",
+        "Rate": 49.73,
+        "Skills": {
+            "Machine Learning": {
+                "level": "beginner"
+            },
+            "Redux": {
+                "level": "beginner"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Unity": {
+                "level": "expert"
+            },
+            "Data Engineering": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Database Administrator": {
+                "years": 10.0
+            },
+            "3D Designer": {
+                "years": 5.1
+            },
+            "Backend Developer": {
+                "years": 8.9
+            }
+        },
+        "Domain": [
+            "Gaming",
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-01-27",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 42,
+        "Name": "Jay Patterson",
+        "Rate": 51.67,
+        "Skills": {
+            "Express": {
+                "level": "beginner"
+            },
+            "Ruby": {
+                "level": "beginner"
+            },
+            "Flask": {
+                "level": "expert"
+            },
+            "Solidity": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Cloud Engineer": {
+                "years": 8.2
+            },
+            "System Administrator": {
+                "years": 2.0
+            }
+        },
+        "Domain": [
+            "Education",
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2024-12-27",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 43,
+        "Name": "Margaret Moore",
+        "Rate": 92.58,
+        "Skills": {
+            "Machine Learning": {
+                "level": "expert"
+            },
+            "C++": {
+                "level": "intermediate"
+            },
+            "React": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Robotics Engineer": {
+                "years": 2.9
+            },
+            "AI Engineer": {
+                "years": 2.7
+            },
+            "Blockchain Developer": {
+                "years": 9.0
+            }
+        },
+        "Domain": [
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-01-05",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 44,
+        "Name": "Jesse Ruiz",
+        "Rate": 69.7,
+        "Skills": {
+            "DevOps": {
+                "level": "beginner"
+            },
+            "Kubernetes": {
+                "level": "expert"
+            },
+            "React": {
+                "level": "intermediate"
+            },
+            "Redux": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Financial Analyst": {
+                "years": 8.5
+            },
+            "Data Analyst": {
+                "years": 6.9
+            },
+            "DevOps Engineer": {
+                "years": 6.0
+            },
+            "Full Stack Developer": {
+                "years": 5.7
+            }
+        },
+        "Domain": [
+            "Media"
+        ],
+        "AvailableDate": "2024-12-03",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 45,
+        "Name": "Pamela Patton",
+        "Rate": 63.75,
+        "Skills": {
+            "CSS": {
+                "level": "beginner"
+            },
+            "Financial Modeling": {
+                "level": "intermediate"
+            },
+            "React Native": {
+                "level": "beginner"
+            },
+            "TypeScript": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "DevOps Engineer": {
+                "years": 2.8
+            },
+            "Financial Analyst": {
+                "years": 6.6
+            },
+            "System Administrator": {
+                "years": 1.1
+            },
+            "Robotics Engineer": {
+                "years": 1.9
+            }
+        },
+        "Domain": [
+            "Media"
+        ],
+        "AvailableDate": "2024-11-24",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 46,
+        "Name": "Stephanie Jefferson",
+        "Rate": 88.51,
+        "Skills": {
+            "CSS": {
+                "level": "expert"
+            },
+            "Flask": {
+                "level": "intermediate"
+            },
+            "NLP": {
+                "level": "intermediate"
+            },
+            "Django": {
+                "level": "beginner"
+            },
+            "Redux": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Data Analyst": {
+                "years": 4.8
+            },
+            "Database Administrator": {
+                "years": 8.6
+            },
+            "Data Engineer": {
+                "years": 1.9
+            },
+            "NLP Specialist": {
+                "years": 7.5
+            }
+        },
+        "Domain": [
+            "Communication"
+        ],
+        "AvailableDate": "2024-11-19",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 47,
+        "Name": "Randy Ortega",
+        "Rate": 77.53,
+        "Skills": {
+            "GraphQL": {
+                "level": "expert"
+            },
+            "Blockchain": {
+                "level": "beginner"
+            },
+            "Data Science": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 6.0
+            },
+            "3D Designer": {
+                "years": 3.7
+            }
+        },
+        "Domain": [
+            "Media"
+        ],
+        "AvailableDate": "2024-11-19",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 48,
+        "Name": "Raymond Shepherd",
+        "Rate": 44.56,
+        "Skills": {
+            "Java": {
+                "level": "intermediate"
+            },
+            "Rails": {
+                "level": "beginner"
+            },
+            "TensorFlow": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Frontend Developer": {
+                "years": 1.3
+            },
+            "Software Engineer": {
+                "years": 6.5
+            },
+            "Data Engineer": {
+                "years": 1.5
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Autonomous Systems",
+            "Education"
+        ],
+        "AvailableDate": "2024-12-29",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 49,
+        "Name": "Scott Franklin",
+        "Rate": 47.37,
+        "Skills": {
+            "Machine Learning": {
+                "level": "expert"
+            },
+            "Java": {
+                "level": "expert"
+            },
+            "Blockchain": {
+                "level": "expert"
+            },
+            "Ruby": {
+                "level": "expert"
+            },
+            "3D Modeling": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 7.6
+            },
+            "NLP Specialist": {
+                "years": 9.9
+            },
+            "Blockchain Developer": {
+                "years": 9.7
+            },
+            "Cloud Engineer": {
+                "years": 5.6
+            }
+        },
+        "Domain": [
+            "Gaming"
+        ],
+        "AvailableDate": "2025-02-02",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 50,
+        "Name": "Jordan Chavez",
+        "Rate": 93.09,
+        "Skills": {
+            "C#": {
+                "level": "beginner"
+            },
+            "SQL": {
+                "level": "expert"
+            },
+            "AWS": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Financial Analyst": {
+                "years": 4.8
+            },
+            "Data Analyst": {
+                "years": 8.1
+            }
+        },
+        "Domain": [
+            "E-commerce",
+            "Retail",
+            "Communication"
+        ],
+        "AvailableDate": "2025-02-02",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 51,
+        "Name": "Kara Murray",
+        "Rate": 51.9,
+        "Skills": {
+            "DevOps": {
+                "level": "beginner"
+            },
+            "Django": {
+                "level": "beginner"
+            },
+            "Rails": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Database Administrator": {
+                "years": 4.8
+            },
+            "System Administrator": {
+                "years": 5.0
+            }
+        },
+        "Domain": [
+            "Retail"
+        ],
+        "AvailableDate": "2025-02-01",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 52,
+        "Name": "Mr. Russell Golden V",
+        "Rate": 66.88,
+        "Skills": {
+            "ETL": {
+                "level": "beginner"
+            },
+            "React Native": {
+                "level": "intermediate"
+            },
+            "Python": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Financial Analyst": {
+                "years": 4.3
+            },
+            "Backend Developer": {
+                "years": 4.8
+            },
+            "Data Scientist": {
+                "years": 7.2
+            }
+        },
+        "Domain": [
+            "E-commerce",
+            "Media"
+        ],
+        "AvailableDate": "2025-01-21",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 53,
+        "Name": "Melissa Hess",
+        "Rate": 80.04,
+        "Skills": {
+            "Blockchain": {
+                "level": "expert"
+            },
+            "Data Science": {
+                "level": "expert"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Data Analysis": {
+                "level": "intermediate"
+            },
+            "ETL": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Frontend Developer": {
+                "years": 6.5
+            },
+            "UI/UX Designer": {
+                "years": 1.1
+            },
+            "Blockchain Developer": {
+                "years": 1.6
+            },
+            "Data Analyst": {
+                "years": 9.5
+            }
+        },
+        "Domain": [
+            "Media"
+        ],
+        "AvailableDate": "2025-02-10",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 54,
+        "Name": "Blake Steele",
+        "Rate": 68.79,
+        "Skills": {
+            "Data Science": {
+                "level": "beginner"
+            },
+            "Data Engineering": {
+                "level": "expert"
+            },
+            "Solidity": {
+                "level": "intermediate"
+            },
+            "Django": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "DevOps Engineer": {
+                "years": 6.6
+            },
+            "Frontend Developer": {
+                "years": 1.3
+            },
+            "Machine Learning Engineer": {
+                "years": 9.2
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Healthcare"
+        ],
+        "AvailableDate": "2024-11-30",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 55,
+        "Name": "Donna Grimes",
+        "Rate": 48.07,
+        "Skills": {
+            "Blockchain": {
+                "level": "expert"
+            },
+            "Data Analysis": {
+                "level": "expert"
+            },
+            "Redux": {
+                "level": "beginner"
+            },
+            "Django": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Software Engineer": {
+                "years": 6.0
+            },
+            "3D Designer": {
+                "years": 2.9
+            },
+            "UI/UX Designer": {
+                "years": 1.3
+            }
+        },
+        "Domain": [
+            "Cloud Computing",
+            "Communication"
+        ],
+        "AvailableDate": "2025-01-17",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 56,
+        "Name": "Jeremiah Cooper",
+        "Rate": 48.23,
+        "Skills": {
+            "Blockchain": {
+                "level": "intermediate"
+            },
+            "Go": {
+                "level": "beginner"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Django": {
+                "level": "intermediate"
+            },
+            "HTML": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Robotics Engineer": {
+                "years": 3.6
+            },
+            "Machine Learning Engineer": {
+                "years": 3.3
+            }
+        },
+        "Domain": [
+            "Retail"
+        ],
+        "AvailableDate": "2025-02-10",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 57,
+        "Name": "Carlos Freeman",
+        "Rate": 46.3,
+        "Skills": {
+            "ETL": {
+                "level": "expert"
+            },
+            "Unity": {
+                "level": "expert"
+            },
+            "Express": {
+                "level": "intermediate"
+            },
+            "Blockchain": {
+                "level": "intermediate"
+            },
+            "Objective-C": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Blockchain Developer": {
+                "years": 9.2
+            },
+            "Backend Developer": {
+                "years": 3.2
+            }
+        },
+        "Domain": [
+            "Cloud Computing"
+        ],
+        "AvailableDate": "2025-01-27",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 58,
+        "Name": "Antonio Lucas",
+        "Rate": 95.61,
+        "Skills": {
+            "3D Modeling": {
+                "level": "intermediate"
+            },
+            "React": {
+                "level": "expert"
+            },
+            "HTML": {
+                "level": "beginner"
+            },
+            "Go": {
+                "level": "beginner"
+            },
+            "Flask": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "Backend Developer": {
+                "years": 7.7
+            },
+            "Software Engineer": {
+                "years": 4.7
+            }
+        },
+        "Domain": [
+            "Media",
+            "Communication"
+        ],
+        "AvailableDate": "2024-12-18",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 59,
+        "Name": "Timothy Torres",
+        "Rate": 55.25,
+        "Skills": {
+            "Redux": {
+                "level": "beginner"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "Data Engineering": {
+                "level": "expert"
+            },
+            "Data Science": {
+                "level": "beginner"
+            },
+            "WebSockets": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "AI Engineer": {
+                "years": 6.4
+            },
+            "System Administrator": {
+                "years": 3.7
+            },
+            "Data Engineer": {
+                "years": 9.9
+            },
+            "Robotics Engineer": {
+                "years": 6.7
+            }
+        },
+        "Domain": [
+            "Communication",
+            "Gaming",
+            "Media"
+        ],
+        "AvailableDate": "2024-12-29",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 60,
+        "Name": "Deborah Rose",
+        "Rate": 61.95,
+        "Skills": {
+            "Flask": {
+                "level": "expert"
+            },
+            "Kubernetes": {
+                "level": "beginner"
+            },
+            "Data Engineering": {
+                "level": "expert"
+            },
+            "Blockchain": {
+                "level": "intermediate"
+            },
+            "SQL": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "Database Administrator": {
+                "years": 2.8
+            },
+            "Machine Learning Engineer": {
+                "years": 9.0
+            }
+        },
+        "Domain": [
+            "Education",
+            "Media"
+        ],
+        "AvailableDate": "2024-11-23",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 61,
+        "Name": "Mr. Glenn Pearson",
+        "Rate": 85.59,
+        "Skills": {
+            "Rails": {
+                "level": "beginner"
+            },
+            "Flask": {
+                "level": "intermediate"
+            },
+            "Data Analysis": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "3D Designer": {
+                "years": 5.6
+            },
+            "Robotics Engineer": {
+                "years": 4.9
+            },
+            "Smart Contract Developer": {
+                "years": 3.8
+            },
+            "NLP Specialist": {
+                "years": 7.2
+            }
+        },
+        "Domain": [
+            "Retail",
+            "Autonomous Systems"
+        ],
+        "AvailableDate": "2024-11-20",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 62,
+        "Name": "Jean Hinton",
+        "Rate": 63.73,
+        "Skills": {
+            "HTML": {
+                "level": "expert"
+            },
+            "Data Science": {
+                "level": "intermediate"
+            },
+            "Flask": {
+                "level": "beginner"
+            },
+            "WebSockets": {
+                "level": "intermediate"
+            }
+        },
+        "PastJobTitles": {
+            "NLP Specialist": {
+                "years": 4.9
+            },
+            "3D Designer": {
+                "years": 5.7
+            },
+            "Financial Analyst": {
+                "years": 5.9
+            }
+        },
+        "Domain": [
+            "Finance"
+        ],
+        "AvailableDate": "2024-12-23",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S7P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 63,
+        "Name": "Melissa Collins MD",
+        "Rate": 62.8,
+        "Skills": {
+            "Machine Learning": {
+                "level": "beginner"
+            },
+            "Swift": {
+                "level": "beginner"
+            },
+            "DevOps": {
+                "level": "beginner"
+            },
+            "Spring Boot": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "UI/UX Designer": {
+                "years": 7.2
+            },
+            "System Administrator": {
+                "years": 7.5
+            }
+        },
+        "Domain": [
+            "Media",
+            "Education"
+        ],
+        "AvailableDate": "2024-12-31",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 64,
+        "Name": "Dennis Jones",
+        "Rate": 44.75,
+        "Skills": {
+            "TensorFlow": {
+                "level": "beginner"
+            },
+            "Data Engineering": {
+                "level": "intermediate"
+            },
+            "C#": {
+                "level": "beginner"
+            },
+            "NLP": {
+                "level": "beginner"
+            }
+        },
+        "PastJobTitles": {
+            "Cloud Engineer": {
+                "years": 8.0
+            },
+            "DevOps Engineer": {
+                "years": 8.1
+            },
+            "Robotics Engineer": {
+                "years": 3.0
+            }
+        },
+        "Domain": [
+            "Media",
+            "E-commerce",
+            "Education"
+        ],
+        "AvailableDate": "2024-11-29",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    },
+    {
+        "ResourceID": 65,
+        "Name": "Dillon Soto",
+        "Rate": 97.01,
+        "Skills": {
+            "Data Analysis": {
+                "level": "expert"
+            },
+            "React Native": {
+                "level": "intermediate"
+            },
+            "Redux": {
+                "level": "beginner"
+            },
+            "Solidity": {
+                "level": "beginner"
+            },
+            "Objective-C": {
+                "level": "expert"
+            }
+        },
+        "PastJobTitles": {
+            "3D Designer": {
+                "years": 5.5
+            },
+            "DevOps Engineer": {
+                "years": 8.7
+            },
+            "NLP Specialist": {
+                "years": 6.5
+            }
+        },
+        "Domain": [
+            "Gaming",
+            "Autonomous Systems",
+            "Retail"
+        ],
+        "AvailableDate": "2025-02-02",
+        "OrgID": "org_2mZShDPkUeuXKV0MQSJoabl8S78P",
+        "TeamID": null,
+        "OnBench": true
+    }
+]

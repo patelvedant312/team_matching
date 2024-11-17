@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 class Organization(db.Model):
     __tablename__ = 'organizations'
     
-    OrgID = db.Column(Integer, primary_key=True)
+    OrgID = db.Column(String, primary_key=True)
     OrgName = db.Column(String(100), nullable=False, unique=True)
 
     # Relationships
