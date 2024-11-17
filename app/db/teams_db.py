@@ -1,6 +1,7 @@
 # app/db/teams_db.py
 
-from app.models import db, Team
+from app.models import Team
+from app import db
 
 def get_all_teams():
     return Team.query.all()

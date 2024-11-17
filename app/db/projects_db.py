@@ -1,6 +1,7 @@
 # app/db/projects_db.py
 
-from app.models import db, Project
+from app.models import Project
+from app import db
 from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 import logging

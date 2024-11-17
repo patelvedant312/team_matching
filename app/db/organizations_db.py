@@ -1,6 +1,7 @@
 # app/db/organizations_db.py
 
-from app.models import db, Organization
+from app.models import Organization
+from app import db
 
 def get_all_organizations():
     return Organization.query.all()
