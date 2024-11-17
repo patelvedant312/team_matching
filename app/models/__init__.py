@@ -1,8 +1,7 @@
 # models/__init__.py
 
-from flask_sqlalchemy import SQLAlchemy
+from app import db
 
-db = SQLAlchemy()
 
 # Import models here to register them with SQLAlchemy
 from app.models.organization import Organization

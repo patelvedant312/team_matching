@@ -1,5 +1,5 @@
 from flask import Flask
-from app.models import db
+from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 
@@ -12,6 +12,9 @@ def create_app():
 
     db.init_app(app)  # Initialize the database
     migrate = Migrate(app, db)  # Initialize migrations
+    
+    with app.app_context():
+        from app import models
 
     # Register blueprints with the correct prefixes
     from app.api.resources import resources_bp

@@ -1,4 +1,4 @@
-from app.models import db  # Import db instance from models
+from app import db  # Import db instance from models
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 

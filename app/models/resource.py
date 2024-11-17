@@ -1,4 +1,4 @@
-from app.models import db
+from app import db
 from sqlalchemy import Integer, String, Date, Numeric, ForeignKey, Boolean 
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import JSONB, ARRAY
