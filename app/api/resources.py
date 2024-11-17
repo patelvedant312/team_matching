@@ -50,8 +50,9 @@ def create_resource():
         org_id = request.args.get('orgID')
         if not org_id:
             return jsonify({"error": "orgID is required"}), 400
+
         data = request.get_json()
-        data['OrgID'] = org_id
+        data['OrgID'] = org_id  # Ensure the orgID from the query parameter is used
         new_resource = create_new_resource(data)
         return jsonify(new_resource.serialize()), 201
     except Exception as e:
@@ -63,8 +64,10 @@ def update_resource_route():
     try:
         org_id = request.args.get('orgID')
         resource_id = request.args.get('resourceID', type=int)
+
         if not org_id or not resource_id:
             return jsonify({"error": "orgID and resourceID are required"}), 400
+
         data = request.get_json()
         updated_resource = update_resource(resource_id, org_id, data)
         return jsonify(updated_resource.serialize()), 200
@@ -77,8 +80,10 @@ def delete_resource_route():
     try:
         org_id = request.args.get('orgID')
         resource_id = request.args.get('resourceID', type=int)
+
         if not org_id or not resource_id:
             return jsonify({"error": "orgID and resourceID are required"}), 400
+
         result = delete_resource(resource_id, org_id)
         return jsonify(result), 200
     except Exception as e:
