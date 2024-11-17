@@ -1,7 +1,7 @@
 # app/api/resources.py
 
 from flask import Blueprint, request, jsonify
-from app.db.resources_db import (
+from app.Files_Database.resources_db import (
     get_all_resources,
     get_resource_by_id,
     create_new_resource,

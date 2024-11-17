@@ -1,7 +1,7 @@
 # app/api/projects.py
 
 from flask import Blueprint, request, jsonify
-from app.db.projects_db import (
+from app.Files_Database.projects_db import (
     get_all_projects,
     get_project_by_id,
     create_new_project,

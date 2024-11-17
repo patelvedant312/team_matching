@@ -1,7 +1,7 @@
 # api/organizations.py
 
 from flask import Blueprint, request, jsonify
-from app.db.organizations_db import (
+from app.Files_Database.organizations_db import (
     get_all_organizations,
     get_organization_by_id,
     create_new_organization,

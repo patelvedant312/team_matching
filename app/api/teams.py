@@ -5,7 +5,7 @@ from app.services.team_formation import match_resources_to_projects
 from app.models.project import Project
 from app.models.resource import Resource
 import logging
-from app.db.teams_db import (
+from app.Files_Database.teams_db import (
     get_all_teams,
     get_team_by_id,
     create_new_team,

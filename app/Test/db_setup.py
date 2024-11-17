@@ -11,6 +11,7 @@ from decimal import Decimal
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from app import create_app, db
+from app import db
 from app.models.organization import Organization
 from app.models.resource import Resource
 from app.models.project import Project
