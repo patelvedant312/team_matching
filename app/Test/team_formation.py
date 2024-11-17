@@ -7,7 +7,7 @@ from munkres import Munkres
 
 from .utils import level_to_numeric, get_resource_skills_with_levels, calculate_weight
 
-from app.Test import db
+from app import db
 from .models import Resource, Project, Team
 
 from decimal import Decimal
