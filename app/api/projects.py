@@ -14,15 +14,17 @@ import logging
 # Configure logging (you can configure this elsewhere in your app)
 logging.basicConfig(level=logging.INFO)
 
-projects_bp = Blueprint('projects', __name__, url_prefix='/projects')
+projects_bp = Blueprint('projects', __name__)
 
-@projects_bp.route('/', methods=['GET'])
-def get_projects():
-    """
-    Retrieve all projects.
-    """
+# GET all projects for a given organization
+@projects_bp.route('/all', methods=['GET'])
+def get_all_projects_route():
     try:
-        projects = get_all_projects()
+        org_id = request.args.get('orgID')
+        if not org_id:
+            return jsonify({"error": "orgID is required"}), 400
+
+        projects = get_all_projects(org_id)
         serialized_projects = [project.serialize() for project in projects]
         logging.info("Successfully retrieved all projects.")
         return jsonify(serialized_projects), 200
@@ -30,33 +32,41 @@ def get_projects():
         logging.error(f"Error retrieving projects: {e}")
         return jsonify({"error": str(e)}), 500
 
-@projects_bp.route('/<int:id>', methods=['GET'])
-def get_project(id):
-    """
-    Retrieve a single project by ID.
-    """
+# GET project by ID for a given organization
+@projects_bp.route('/by-id', methods=['GET'])
+def get_project_by_id_route():
     try:
-        project = get_project_by_id(id)
-        serialized_project = project.serialize()
-        logging.info(f"Successfully retrieved project with ID {id}.")
-        return jsonify(serialized_project), 200
-    except ValueError as ve:
-        logging.warning(f"ValueError: {ve}")
-        return jsonify({"error": str(ve)}), 404
+        org_id = request.args.get('orgID')
+        project_id = request.args.get('projectID', type=int)
+
+        if not org_id or not project_id:
+            return jsonify({"error": "orgID and projectID are required"}), 400
+
+        project = get_project_by_id(project_id, org_id)
+        if project:
+            serialized_project = project.serialize()
+            logging.info(f"Successfully retrieved project with ID {project_id}.")
+            return jsonify(serialized_project), 200
+        else:
+            logging.warning(f"Project with ID {project_id} not found.")
+            return jsonify({"error": "Project not found"}), 404
     except Exception as e:
-        logging.error(f"Error retrieving project with ID {id}: {e}")
+        logging.error(f"Error retrieving project with ID {project_id}: {e}")
         return jsonify({"error": str(e)}), 500
 
+# POST (Create) new project
 @projects_bp.route('/', methods=['POST'])
-def create_project():
-    """
-    Create a new project.
-    """
+def create_project_route():
     try:
+        org_id = request.args.get('orgID')
+        if not org_id:
+            return jsonify({"error": "orgID is required"}), 400
+
         data = request.get_json()
         if not data:
             raise ValueError("No input data provided")
 
+        data['OrgID'] = org_id  # Ensure OrgID is included in the data
         new_project = create_new_project(data)
         serialized_project = new_project.serialize()
         logging.info(f"Successfully created project with ID {new_project.ProjectID}.")
@@ -71,19 +81,22 @@ def create_project():
         logging.error(f"Error creating project: {e}")
         return jsonify({"error": str(e)}), 500
 
-@projects_bp.route('/<int:id>', methods=['PUT'])
-def update_project_route(id):
-    """
-    Update an existing project.
-    """
+# PUT (Update) existing project
+@projects_bp.route('/', methods=['PUT'])
+def update_project_route():
     try:
+        org_id = request.args.get('orgID')
+        project_id = request.args.get('projectID', type=int)
+        if not org_id or not project_id:
+            return jsonify({"error": "orgID and projectID are required"}), 400
+
         data = request.get_json()
         if not data:
             raise ValueError("No input data provided")
 
-        updated_project = update_project(id, data)
+        updated_project = update_project(project_id, org_id, data)
         serialized_project = updated_project.serialize()
-        logging.info(f"Successfully updated project with ID {id}.")
+        logging.info(f"Successfully updated project with ID {project_id}.")
         return jsonify(serialized_project), 200
     except ValueError as ve:
         logging.warning(f"ValueError: {ve}")
@@ -92,21 +105,24 @@ def update_project_route(id):
         logging.error(f"IntegrityError: {ie}")
         return jsonify({"error": "Database integrity error: " + str(ie.orig)}), 400
     except Exception as e:
-        logging.error(f"Error updating project with ID {id}: {e}")
+        logging.error(f"Error updating project with ID {project_id}: {e}")
         return jsonify({"error": str(e)}), 500
 
-@projects_bp.route('/<int:id>', methods=['DELETE'])
-def delete_project_route(id):
-    """
-    Delete a project.
-    """
+# DELETE project
+@projects_bp.route('/', methods=['DELETE'])
+def delete_project_route():
     try:
-        result = delete_project(id)
-        logging.info(f"Successfully deleted project with ID {id}.")
+        org_id = request.args.get('orgID')
+        project_id = request.args.get('projectID', type=int)
+        if not org_id or not project_id:
+            return jsonify({"error": "orgID and projectID are required"}), 400
+
+        result = delete_project(project_id, org_id)
+        logging.info(f"Successfully deleted project with ID {project_id}.")
         return jsonify(result), 200
     except ValueError as ve:
         logging.warning(f"ValueError: {ve}")
         return jsonify({"error": str(ve)}), 404
     except Exception as e:
-        logging.error(f"Error deleting project with ID {id}: {e}")
+        logging.error(f"Error deleting project with ID {project_id}: {e}")
         return jsonify({"error": str(e)}), 500
